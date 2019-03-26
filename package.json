@@ -1,7 +1,10 @@
 {
-  "name": "copenhagen_theme",
-  "version": "1.0.0",
-  "repository": "git@github.com:zendesk/copenhagen_theme.git",
+  "name": "evoko-zendesk-theme",
+  "version": "1.5.0",
+  "description": "Evoko Theme for Zendesk Guide",
+  "homepage": "https://support.evoko.se/hc/en-us",
+  "repository": "github:rottbers/evoko-zendesk-theme",
+  "license": "Apache-2.0",
   "dependencies": {
     "node-fetch": "^2.1.2"
   },
