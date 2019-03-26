@@ -5,10 +5,15 @@
   "homepage": "https://support.evoko.se/hc/en-us",
   "repository": "github:rottbers/evoko-zendesk-theme",
   "license": "Apache-2.0",
+  "scripts": {
+    "prettier:check": "prettier --check \"./**/*.{js,json,scss,md}\"",
+    "prettier:write": "prettier --write \"./**/*.{js,json,scss,md}\""
+  },
   "dependencies": {
     "node-fetch": "^2.1.2"
   },
   "devDependencies": {
-    "js-yaml": "^3.12.0"
+    "js-yaml": "^3.12.0",
+    "prettier": "^1.16.4"
   }
 }
