@@ -145,6 +145,18 @@ ul {
   }
 }
 
+.dropdown-toggle {
+  background: none;
+  border: 0;
+  padding: 0;
+  text-align: initial;
+}
+
+.dropdown-toggle:focus {
+  outline: 0;
+  text-decoration: underline;
+}
+
 .dropdown-toggle::after {
   color: inherit;
 }
@@ -362,6 +374,11 @@ ul {
   content: "*";
   color: #f00;
   margin-left: 2px;
+}
+
+.form-field .optional {
+  color: lighten($text_color, 20%);
+  margin-left: 4px;
 }
 
 .form-field p {
@@ -922,28 +939,29 @@ ul {
 
 .promoted-articles-item {
   flex: 1 0 auto;
-  border-bottom: 1px solid #ddd;
-  padding: 15px 0;
 }
 
 @media (min-width: 1024px) {
   .promoted-articles-item {
     align-self: flex-end;
     flex: 0 0 auto;
-    margin-right: 30px;
+    padding-right: 30px;
     width: 33%;
     /* Three columns on desktop */
   }
   [dir="rtl"] .promoted-articles-item {
-    margin: 0 0 0 30px;
+    padding: 0 0 0 30px;
   }
 }
 
 .promoted-articles-item:nth-child(3n) {
-  margin-right: 0;
+  padding-right: 0;
 }
 
 .promoted-articles-item a {
+  display: block;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
   color: $text_color;
 }
 
@@ -951,12 +969,12 @@ ul {
   vertical-align: baseline;
 }
 
-.promoted-articles-item:last-child {
+.promoted-articles-item:last-child a {
   border: 0;
 }
 
 @media (min-width: 1024px) {
-  .promoted-articles-item:last-child {
+  .promoted-articles-item:last-child a {
     border-bottom: 1px solid #ddd;
   }
 }
@@ -1124,7 +1142,6 @@ ul {
 }
 
 .article-list-item {
-  border-bottom: 1px solid #ddd;
   font-size: 16px;
   padding: 15px 0;
 }
@@ -1159,6 +1176,42 @@ ul {
 }
 
 .section-subscribe .dropdown-toggle::after {
+  display: none;
+}
+
+.section-list {
+  margin: 40px 0;
+}
+
+.section-list--collapsed .section-list-item:nth-child(1n + 6) {
+  display: none;
+}
+
+.section-list-item {
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  padding: 15px 0;
+}
+
+.section-list-item:first-child {
+  border-top: 1px solid #ddd;
+}
+
+.section-list-item a {
+  align-items: center;
+  color: $text_color;
+  display: flex;
+  justify-content: space-between;
+}
+
+.see-all-sections-trigger {
+  cursor: pointer;
+  display: block;
+  padding: 15px;
+  text-align: center;
+}
+
+.see-all-sections-trigger[aria-hidden="true"] {
   display: none;
 }
 
@@ -1371,17 +1424,19 @@ ul {
 }
 
 .article-relatives > * {
-  flex: 1 0 auto;
+  flex: 1 0 50%;
+  min-width: 50%;
+  overflow-wrap: break-word;
   margin-right: 0;
 }
 
 .article-relatives > *:last-child {
-  margin: 0;
+  padding: 0;
 }
 
 @media (min-width: 768px) {
   .article-relatives > * {
-    margin-right: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -1636,11 +1691,10 @@ ul {
   float: right;
 }
 
-.comment-sorter a {
+.comment-sorter .dropdown-toggle {
   color: lighten($text_color, 20%);
   font-weight: 300;
   font-size: 13px;
-  text-decoration: none;
 }
 
 [dir="rtl"] .comment-sorter {
@@ -1785,8 +1839,10 @@ ul {
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   word-break: break-word;
+  word-wrap: break-word;
   font-family: $text_font;
   line-height: 1.6;
+  overflow-x: auto;
 }
 
 .comment-body img {
@@ -3013,20 +3069,14 @@ ul {
 .request-main .comment-show-container {
   border-radius: 2px;
   border: 1px solid #ddd;
-  cursor: pointer;
-  display: flex;
-  padding: 8px 15px;
+  color: lighten($text_color, 20%);
+  text-align: inherit;
+  padding: 8px 25px;
   width: 100%;
 }
 
 .request-main .comment-show-container.hidden {
   display: none;
-}
-
-.request-main .comment-show-container-content {
-  align-self: center;
-  color: lighten($text_color, 20%);
-  margin-left: 10px;
 }
 
 .request-main .form-field.comment-ccs > ul {
@@ -3423,6 +3473,7 @@ ul {
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   word-break: break-word;
+  word-wrap: break-word;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3478,6 +3529,7 @@ ul {
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   word-break: break-word;
+  word-wrap: break-word;
   margin: 15px 0;
   flex-basis: 100%;
 }
@@ -3720,6 +3772,7 @@ ul {
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   word-break: break-word;
+  word-wrap: break-word;
   padding: 20px 0;
   position: relative;
 }
@@ -3896,6 +3949,7 @@ ul {
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   word-break: break-word;
+  word-wrap: break-word;
   margin: 0;
   min-width: 0;
   width: 100%;
@@ -4009,6 +4063,7 @@ ul {
 
 .search-result-description {
   margin-top: 15px;
+  word-break: break-word;
 }
 
 .search-result-votes, .search-result-meta-count {
@@ -4060,4 +4115,13 @@ ul {
   content: "·";
   display: inline-block;
   margin: 0 5px;
+}
+
+/* Don't display CJK results in italic */
+/* Add a yellow background instead */
+html[lang|="zh"] .search-result-description em,
+html[lang|="ko"] .search-result-description em,
+html[lang|="ja"] .search-result-description em {
+  font-style: normal;
+  background: yellow;
 }

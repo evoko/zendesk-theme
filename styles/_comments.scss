@@ -32,11 +32,10 @@
     display: inline-block;
     float: right;
 
-    a {
+    .dropdown-toggle {
       color: $secondary-text-color;
       font-weight: $font-weight-light;
       font-size: $font-size-small;
-      text-decoration: none;
     }
 
     [dir="rtl"] & {
@@ -153,6 +152,7 @@
     @include content-body;
     font-family: $text_font;
     line-height: 1.6;
+    overflow-x: auto;
   }
 
   &-mark-as-solved {
