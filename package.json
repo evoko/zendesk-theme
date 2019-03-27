@@ -6,6 +6,8 @@
   "repository": "github:rottbers/evoko-zendesk-theme",
   "license": "Apache-2.0",
   "scripts": {
+    "preview": "zat theme preview",
+    "preview:wsl": "wsl zat theme preview",
     "prettier:check": "prettier --check \"./**/*.{js,json,scss,md}\"",
     "prettier:write": "prettier --write \"./**/*.{js,json,scss,md}\""
   },
