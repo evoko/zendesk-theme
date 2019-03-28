@@ -9,9 +9,12 @@
     "preview": "zat theme preview",
     "preview:wsl": "wsl zat theme preview",
     "prettier:check": "prettier --check \"./**/*.{js,json,scss,md}\"",
-    "prettier:write": "prettier --write \"./**/*.{js,json,scss,md}\""
+    "prettier:write": "prettier --write \"./**/*.{js,json,scss,md}\"",
+    "styles:watch": "sass styles/index.scss:style.css --watch",
+    "styles:build": "sass styles/index.scss:style.css --style compressed"
   },
   "devDependencies": {
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "sass": "^1.17.3"
   }
 }
