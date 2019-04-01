@@ -1,11 +1,14 @@
 // Variables
 
 // Colors
-$brand_color: #0072ef !default;
+$brand_color: #74bf95 !default;
 $brand_text_color: #fff !default; //Color for text with an accent color background
-$text_color: #333 !default;
-$link_color: #0072ef !default;
+$text_color: #24292e !default;
+$link_color: #0366d6 !default;
 $background_color: #fff !default;
+$brand-yellow-color: #fbc337 !default;
+$brand-red-color: #e9495f !default;
+$brand-blue-color: #51c2e1 !default;
 
 $visited-link-color: zass-darken($link_color, 20%);
 $hover-button-color: zass-darken($brand_color, 20%);
@@ -14,19 +17,9 @@ $secondary-text-color: zass-lighten($text_color, 20%);
 $primary-shade: zass-darken($background_color, 3%);
 $secondary-shade: zass-darken($background_color, 5%);
 
-$font-size-bigger: 16px;
-$font-size-base: 15px;
-$font-size-navigation: 14px;
-$font-size-small: 13px;
-$font-size-smaller: 11px;
-
 $border-color: #ddd;
 
 $button-color: $brand_color;
-
-$input-font-size: 14px;
-$field-text-color: #999;
-$field-text-focus-color: #555;
 
 // Breakpoints variables
 $tablet-width: 768px;
@@ -45,6 +38,16 @@ $mono_font: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
 $font-weight-base: 400;
 $font-weight-light: 300;
 $font-weight-semibold: 600;
+
+$font-size-bigger: 16px;
+$font-size-base: 15px;
+$font-size-navigation: 14px;
+$font-size-small: 13px;
+$font-size-smaller: 11px;
+
+$input-font-size: 14px;
+$field-text-color: #999;
+$field-text-focus-color: #555;
 
 // CSS assets
 $assets-dropdown-arrow-svg: "$assets-dropdown-arrow-svg";
