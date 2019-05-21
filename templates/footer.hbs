@@ -62,8 +62,8 @@
         <a href="https://www.facebook.com/Evoko-247614725936414/" target="_blank" rel="noopener"
           aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       </div>
+      {{#if alternative_locales}}
       <div class="footer-bottom-language-selector">
-        {{#if alternative_locales}}
         <div class="dropdown language-selector" aria-haspopup="true">
           <a class="dropdown-toggle">
             {{current_locale.name}}
@@ -76,8 +76,8 @@
             {{/each}}
           </span>
         </div>
-        {{/if}}
       </div>
+      {{/if}}
     </div>
   </div>
 </footer>
