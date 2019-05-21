@@ -3,14 +3,42 @@
   background-image: url($homepage_background_image);
   background-position: center;
   background-size: cover;
-  height: 300px;
+  height: 500px;
   padding: 0 20px;
   text-align: center;
   width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px;
+  margin-top: -70px;
+
+  &::before {
+    position: absolute;
+    max-height: 500px;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    content: '';
+    opacity: 0.75;
+    background-color: $text_color;
+    background-image: linear-gradient(60deg, darken($brand_color, 30%), $text_color 60%);
+  }
 
   &-inner {
     @include vertical-align;
-    max-width: 610px;
+    max-width: 800px;
     margin: 0 auto;
+    z-index: 2;
+    color: white;
+
+    & a {
+      color: $brand_color;
+      font-weight: $font-weight-semibold;
+    }
+
+    &-heading {
+      color: $brand_text_color;
+      font-weight: $font-weight-semibold;
+    }
   }
 }

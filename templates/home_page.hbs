@@ -1,39 +1,63 @@
 <section class="section hero">
+
   <div class="hero-inner">
-    {{search submit=false instant=settings.instant_search class='search search-full'}}
+    <h1 class="hero-inner-heading">Hello. Looking for help?</h1>
+    {{search submit=false instant=settings.instant_search class="search search-full" placeholder="Search our knowledge base"}}
+    <p><strong><i class="fas fa-book"></i> Guides:</strong> getting started with <a
+        href="/hc/en-us/sections/360002082891">Evoko Liso</a> or <a href="/hc/en-us/sections/115001583583">Evoko
+        Pusco</a>?</p>
   </div>
 </section>
 
 <div class="container">
   <section class="section knowledge-base">
+    <h1 class="home-categories-heading">Browse our knowledge base</h1>
     <section class="categories blocks">
       <ul class="blocks-list">
         {{#each categories}}
-          {{#if ../has_multiple_categories}}
-            <li class="blocks-item">
-              <a href='{{url}}' class="blocks-item-link">
-                <h4 class="blocks-item-title">{{name}}</h4>
-                <p class="blocks-item-description">{{excerpt description}}</p>
-              </a>
-            </li>
-          {{else}}
-            {{#each sections}}
-              <li class="blocks-item">
-                <a href='{{url}}' class="blocks-item-link">
-                  <h4 class="blocks-item-title">
-                    {{name}}
-                  </h4>
-                  <p class="blocks-item-description">{{excerpt description}}</p>
-                </a>
-              </li>
-            {{/each}}
-          {{/if}}
+        {{#if ../has_multiple_categories}}
+        <li class="blocks-item">
+          <a href='{{url}}' class="blocks-item-link">
+            {{#is name 'Evoko Room Manager'}}
+            <img alt="Evoko Room Manager" src="{{asset 'home-room-manager.png'}}" />
+            {{/is}}
+            {{#is name 'Evoko Minto'}}
+            <img alt="Evoko Minto" src="{{asset 'home-minto.png'}}" />
+            {{/is}}
+            {{#is name 'Evoko Liso'}}
+            <img alt="Evoko Liso" src="{{asset 'home-liso.png'}}" />
+            {{/is}}
+            {{#is name 'Evoko Groupie'}}
+            <img alt="Evoko Groupie" src="{{asset 'home-groupie.png'}}" />
+            {{/is}}
+            {{#is name 'Evoko Pusco'}}
+            <img alt="Evoko Pusco" src="{{asset 'home-pusco.png'}}" />
+            {{/is}}
+            {{#is name 'General'}}
+            <img alt="General" src="{{asset 'home-general.png'}}" />
+            {{/is}}
+            <h2 class="blocks-item-title">{{name}}</h2>
+            <p class="blocks-item-description">{{excerpt description}}</p>
+          </a>
+        </li>
+        {{else}}
+        {{#each sections}}
+        <li class="blocks-item">
+          <a href='{{url}}' class="blocks-item-link">
+            <h2 class="blocks-item-title">
+              {{name}}
+            </h2>
+            <p class="blocks-item-description">{{excerpt description}}</p>
+          </a>
+        </li>
+        {{/each}}
+        {{/if}}
         {{/each}}
       </ul>
       {{pagination}}
     </section>
 
-    {{#if promoted_articles}}
+    {{!-- {{#if promoted_articles}}
       <section class="articles">
         <h3>{{t 'promoted_articles'}}</h3>
         <ul class="article-list promoted-articles">
@@ -68,5 +92,5 @@
     {{#if settings.show_recent_activity}}
       {{recent_activity}}
     {{/if}}
-  </section>
+  </section> --}}
 </div>

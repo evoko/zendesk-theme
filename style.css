@@ -8,7 +8,7 @@ body {
   background-color: #fff;
   color: #24292e;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -19,7 +19,12 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 400;
   margin-top: 0;
@@ -52,8 +57,8 @@ a:hover, a:active, a:focus {
 
 input,
 textarea {
-  color: #000;
-  font-size: 14px;
+  color: #24292e;
+  font-size: 16px;
 }
 
 input {
@@ -399,8 +404,9 @@ ul {
   position: relative;
   align-items: center;
   display: flex;
-  height: 71px;
+  height: 70px;
   justify-content: space-between;
+  z-index: 2;
 }
 @media (min-width: 1160px) {
   .header {
@@ -429,7 +435,7 @@ ul {
   border: solid 1px #ddd;
   right: 0;
   left: 0;
-  top: 71px;
+  top: 70px;
   z-index: 1;
 }
 .user-nav[aria-expanded=true] > a {
@@ -631,13 +637,6 @@ ul {
   padding-top: 13px;
   color: #fff;
 }
-.footer-bottom-social {
-  float: right;
-  font-size: 24px;
-}
-.footer-bottom-social a {
-  transition: 0.2s;
-}
 .footer-bottom-language-selector {
   font-weight: 300;
   color: #fff;
@@ -646,6 +645,13 @@ ul {
   padding: 4px 8px;
   margin-right: 12px;
   border-radius: 4px;
+}
+.footer-bottom-social {
+  float: right;
+  font-size: 24px;
+}
+.footer-bottom-social a {
+  transition: 0.2s;
 }
 
 /***** Breadcrumbs *****/
@@ -681,7 +687,7 @@ ul {
 }
 .search input[type=search] {
   border: 1px solid #ddd;
-  border-radius: 30px;
+  border-radius: 4px;
   box-sizing: border-box;
   color: #999;
   height: 40px;
@@ -695,8 +701,8 @@ ul {
   padding-left: 20px;
 }
 .search input[type=search]:focus {
-  border: 1px solid #74bf95;
   color: #555;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.28), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .search::before {
   position: relative;
@@ -715,6 +721,9 @@ ul {
 }
 .search-full input[type=search] {
   border: 1px solid #fff;
+  height: 60px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /***** Hero component *****/
@@ -722,17 +731,42 @@ ul {
   background-image: url("$homepage_background_image");
   background-position: center;
   background-size: cover;
-  height: 300px;
+  height: 500px;
   padding: 0 20px;
   text-align: center;
   width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px;
+  margin-top: -70px;
+}
+.hero::before {
+  position: absolute;
+  max-height: 500px;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  content: "";
+  opacity: 0.75;
+  background-color: #24292e;
+  background-image: linear-gradient(60deg, #31694a, #24292e 60%);
 }
 .hero-inner {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  max-width: 610px;
+  max-width: 800px;
   margin: 0 auto;
+  z-index: 2;
+  color: white;
+}
+.hero-inner a {
+  color: #74bf95;
+  font-weight: 600;
+}
+.hero-inner-heading {
+  color: #fff;
+  font-weight: 600;
 }
 
 .page-header {
@@ -801,11 +835,16 @@ ul {
   }
 }
 .sub-nav input[type=search]::after {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 /***** Blocks *****/
 /* Used in Homepage#categories and Community#topics */
+.blocks {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
 .blocks-list {
   display: flex;
   flex-wrap: wrap;
@@ -813,34 +852,26 @@ ul {
   list-style: none;
   padding: 0;
 }
-@media (min-width: 768px) {
-  .blocks-list {
-    margin: 0 -15px;
-  }
-}
 .blocks-item {
-  border: 1px solid #74bf95;
   border-radius: 4px;
   box-sizing: border-box;
-  color: #74bf95;
+  color: #fff;
+  background-color: #74bf95;
   display: flex;
-  flex: 1 0 340px;
+  flex: 1 0 200px;
   flex-direction: column;
   justify-content: center;
-  margin: 0 0 30px;
+  margin: 0 15px 30px;
+  padding: 5px 10px;
   max-width: 100%;
   text-align: center;
-}
-@media (min-width: 768px) {
-  .blocks-item {
-    margin: 0 15px 30px;
-  }
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .blocks-item:hover, .blocks-item:focus, .blocks-item:active {
-  background-color: #74bf95;
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.28), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .blocks-item:hover *, .blocks-item:focus *, .blocks-item:active * {
-  color: #fff;
   text-decoration: none;
 }
 .blocks-item-internal {
@@ -858,13 +889,14 @@ ul {
 }
 .blocks-item-link {
   color: #74bf95;
-  padding: 20px 30px;
 }
 .blocks-item-link:hover, .blocks-item-link:focus, .blocks-item-link:active {
   text-decoration: none;
 }
 .blocks-item-title {
   margin-bottom: 0;
+  font-weight: 300;
+  color: #fff;
 }
 .blocks-item-description {
   font-weight: 300;
@@ -886,6 +918,10 @@ ul {
 
 .section h2 {
   margin-bottom: 10px;
+  text-align: center;
+}
+
+.home-categories-heading {
   text-align: center;
 }
 
@@ -1018,7 +1054,7 @@ ul {
   color: #74bf95;
   content: "💬";
   display: inline-block;
-  font-size: 15px;
+  font-size: 16px;
   padding-right: 3px;
   vertical-align: middle;
 }
@@ -1408,7 +1444,7 @@ ul {
 }
 
 .sidenav-title {
-  font-size: 15px;
+  font-size: 16px;
   position: relative;
 }
 .sidenav-item {
@@ -1427,7 +1463,7 @@ ul {
 
 .recent-articles h3,
 .related-articles h3 {
-  font-size: 15px;
+  font-size: 16px;
   margin: 20px 0;
 }
 .recent-articles li,
@@ -1448,7 +1484,7 @@ ul {
 .attachments .attachment-item::before {
   color: #24292e;
   content: "📎";
-  font-size: 15px;
+  font-size: 16px;
   left: 0;
   position: absolute;
   top: 5px;
@@ -2777,7 +2813,7 @@ ul {
   }
 }
 .request-sidebar h5 {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   position: relative;
 }
@@ -2865,7 +2901,7 @@ ul {
 }
 
 .pagination a, .pagination span {
-  font-size: 15px;
+  font-size: 16px;
   color: zass-lighten(#24292e, 20%);
   padding: 10px 12px;
 }
