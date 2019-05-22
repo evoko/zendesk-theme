@@ -1,7 +1,17 @@
+{{!-- Hide header search on the home page to avoid duplicate search bar --}}
+<style>
+  .header-search {
+    display: none;
+  }
+
+  .header {
+    background-color: transparent;
+  }
+</style>
 <section class="section hero">
 
   <div class="hero-inner">
-    <h1 class="hero-inner-heading">Hello. Looking for help?</h1>
+    <h1 class="hero-inner-heading">Hi. Looking for help?</h1>
     {{search submit=false instant=settings.instant_search class="search search-full" placeholder="Search our knowledge base"}}
     <p><strong><i class="fas fa-book"></i> Guides:</strong> getting started with <a
         href="/hc/en-us/sections/360002082891">Evoko Liso</a> or <a href="/hc/en-us/sections/115001583583">Evoko

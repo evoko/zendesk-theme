@@ -14,7 +14,7 @@
     "styles:build": "sass styles/index.scss:style.css --style compressed"
   },
   "devDependencies": {
-    "prettier": "^1.16.4",
-    "sass": "^1.17.3"
+    "prettier": "^1.17.1",
+    "sass": "^1.20.1"
   }
 }

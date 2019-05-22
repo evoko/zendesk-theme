@@ -4,7 +4,6 @@
 
   input[type='search'] {
     border: 1px solid $border-color;
-    border-radius: $border-radius;
     box-sizing: border-box;
     color: $field-text-color;
     height: 40px;
@@ -12,6 +11,7 @@
     padding-right: 20px;
     -webkit-appearance: none;
     width: 100%;
+    border-radius: $border-radius;
 
     [dir='rtl'] & {
       padding-right: 40px;
@@ -28,7 +28,6 @@
   &::before {
     @extend .icon;
     @include vertical-align;
-    background-color: #fff;
     color: #777;
     content: '\1F50D';
     font-size: 18px;

@@ -1,18 +1,51 @@
 /***** Header *****/
-$header-height: 70px;
-
 .header {
-  @include max-width-container;
   position: relative;
   align-items: center;
   display: flex;
   height: $header-height;
   justify-content: space-between;
   z-index: 2;
+  padding: 0 5%;
+  background-color: $text_color;
 }
 
-.logo img {
-  max-height: 37px;
+.header-logo-image img {
+  max-height: 30px;
+
+  @media (max-width: 400px) {
+    height: 30px;
+    width: 39px;
+    object-fit: cover;
+    object-position: 0% 0;
+  }
+}
+
+.header-logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo-image {
+  display: inline;
+}
+
+.header-logo-title {
+  display: inline-block;
+  font-size: 20px;
+  border-left: 1px solid $brand_text_color;
+  padding-left: 10px;
+  margin-left: 10px;
+
+  a {
+    color: $brand_text_color;
+  }
+}
+
+.header-search {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 20px;
 }
 
 .user-nav {
@@ -39,16 +72,44 @@ $header-height: 70px;
   }
 }
 
+// TODO:
+.submit-a-request::before,
+.login::before,
+.community-link::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding-right: 4px;
+}
+
+.submit-a-request::before {
+  content: '\f1d8';
+}
+
+.login::before {
+  content: '\f2f6';
+}
+
+.community-link::before {
+  content: '\f0c0';
+}
+
 .nav-wrapper {
+  display: flex;
+  align-items: center;
+
   a {
     @include tablet {
       display: inline-block;
     }
 
     border: 0;
-    color: $link_color;
+    color: $brand_text_color;
     display: none;
-    font-size: 14px;
     padding: 0 20px 0 0;
     width: auto;
 
@@ -60,12 +121,14 @@ $header-height: 70px;
     &:focus,
     &:active {
       background-color: transparent;
-      color: $link_color;
+      color: $brand_text_color;
       text-decoration: underline;
     }
 
     &.login {
       display: inline-block;
+      font-size: $font-size-base;
+      padding-right: 0px;
     }
   }
 

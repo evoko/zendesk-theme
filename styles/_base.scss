@@ -55,6 +55,11 @@ a {
   }
 }
 
+b,
+strong {
+  font-weight: $font-weight-semibold;
+}
+
 input,
 textarea {
   color: $text_color;
