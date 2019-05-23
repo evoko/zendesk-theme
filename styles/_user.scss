@@ -15,22 +15,32 @@
     min-width: 0;
     padding: 0;
     white-space: nowrap;
-
-    &:hover,
-    &:focus {
-      color: $brand_text_color;
-      background-color: transparent;
-    }
+    transition: none;
 
     &::after {
       color: $brand_text_color;
+      margin-top: 4px;
+      margin-left: -2px;
+      font-weight: $font-weight-semibold;
+    }
 
-      [dir='rtl'] & {
-        padding-left: 15px;
-        padding-right: 0;
-      }
+    &:hover,
+    &:focus,
+    &:hover::after,
+    &:focus::after {
+      color: $brand_color;
+      background-color: transparent;
+    }
+
+    [dir='rtl'] & {
+      padding-left: 15px;
+      padding-right: 0;
     }
   }
+}
+
+.dropdown-menu a {
+  font-weight: $font-weight-base;
 }
 
 // Selector is this strong to override the styles set with ids
@@ -39,17 +49,18 @@
     display: inline-block;
   }
   display: none;
-  font-size: 14px;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
 /***** User avatar *****/
 .user-avatar {
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   display: inline-block;
   vertical-align: middle;

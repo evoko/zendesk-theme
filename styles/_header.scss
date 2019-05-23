@@ -8,16 +8,24 @@
   z-index: 2;
   padding: 0 5%;
   background-color: $text_color;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
-.header-logo-image img {
-  max-height: 30px;
+.header a {
+  font-weight: 600;
+  color: $brand_text_color;
+  fill: $brand_text_color;
+  stroke: $brand_text_color;
 
-  @media (max-width: 400px) {
-    height: 30px;
-    width: 39px;
-    object-fit: cover;
-    object-position: 0% 0;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: transparent;
+    color: $brand_color;
+    fill: $brand_color;
+    stroke: $brand_color;
+    text-decoration: none;
   }
 }
 
@@ -27,7 +35,21 @@
 }
 
 .header-logo-image {
+  display: inline-block;
+}
+
+.evoko-logo-fav {
+  display: none;
+  @media (max-width: 580px) {
+    display: inline;
+  }
+}
+
+.evoko-logo-full {
   display: inline;
+  @media (max-width: 580px) {
+    display: none;
+  }
 }
 
 .header-logo-title {
@@ -36,12 +58,9 @@
   border-left: 1px solid $brand_text_color;
   padding-left: 10px;
   margin-left: 10px;
-
-  a {
-    color: $brand_text_color;
-  }
 }
 
+// TODO: Improve header search bar behavior for mobile
 .header-search {
   width: 100%;
   max-width: 600px;
@@ -55,6 +74,10 @@
   display: inline-block;
   position: absolute;
   white-space: nowrap;
+
+  a {
+    margin: 0 20px 0 0;
+  }
 
   &[aria-expanded='true'] {
     background-color: #fff;
@@ -72,7 +95,7 @@
   }
 }
 
-// TODO:
+// TODO: Stuff generic font awesome CSS somewhere else
 .submit-a-request::before,
 .login::before,
 .community-link::before {
@@ -110,7 +133,7 @@
     border: 0;
     color: $brand_text_color;
     display: none;
-    padding: 0 20px 0 0;
+    // margin: 0 20px 0 0;
     width: auto;
 
     [dir='rtl'] & {
@@ -121,17 +144,18 @@
     &:focus,
     &:active {
       background-color: transparent;
-      color: $brand_text_color;
-      text-decoration: underline;
+      color: $brand_color;
+      text-decoration: none;
     }
 
     &.login {
       display: inline-block;
       font-size: $font-size-base;
-      padding-right: 0px;
+      padding: 0px;
     }
   }
 
+  // TODO: Fix menu for mobile
   .icon-menu {
     @include tablet {
       display: none;
@@ -139,7 +163,7 @@
     border: 0;
     color: $link_color;
     cursor: pointer;
-    display: inline-block;
+    display: none; //
     margin-right: 10px;
     padding: 0;
     width: auto;

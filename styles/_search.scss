@@ -12,6 +12,7 @@
     -webkit-appearance: none;
     width: 100%;
     border-radius: $border-radius;
+    transition: 0.2s ease-in-out;
 
     [dir='rtl'] & {
       padding-right: 40px;
@@ -20,8 +21,7 @@
 
     &:focus {
       color: $field-text-focus-color;
-      box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.28), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
-        0 1px 5px 0 rgba(0, 0, 0, 0.2);
+      background-color: #fff;
     }
   }
 
@@ -41,10 +41,21 @@
   }
 
   &-full input[type='search'] {
-    border: 1px solid #fff;
     height: 60px;
+    background-color: #fff;
+    border: none;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
       0 1px 5px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    &:focus {
+      box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.28), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+        0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &-header input[type='search'] {
+    background-color: lighten($text-color, 15%);
+    border: none;
   }
 }

@@ -7,8 +7,9 @@
   padding: 0 20px;
   text-align: center;
   width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px;
   margin-top: -$header-height;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
 
   &::before {
     position: absolute;
@@ -21,7 +22,7 @@
     content: '';
     opacity: 0.75;
     background-color: $text_color;
-    background-image: linear-gradient(60deg, darken($brand_color, 30%), $text_color 60%);
+    background-image: linear-gradient(60deg, darken($brand_color, 30%) 20%, $text_color 70%);
   }
 
   &-inner {
