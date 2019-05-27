@@ -60,7 +60,7 @@
       color: $brand_color;
     }
 
-    &-heading {
+    &-home-heading {
       color: $brand_text_color;
       font-weight: $font-weight-semibold;
       margin-bottom: 16px;
@@ -75,13 +75,16 @@
       margin: 0 auto;
     }
 
-    &-page-header {
-      color: #fff;
-      font-size: 58px;
+    &-page-heading {
+      color: $brand_text_color;
       background: #00cdff61;
       margin: 0 auto;
       width: fit-content;
       padding: 0 5%;
+
+      @media (min-width: 580px) {
+        font-size: 48px;
+      }
     }
   }
 }

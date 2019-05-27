@@ -878,13 +878,13 @@ ul {
 .hero-inner a:hover, .hero-inner a:focus, .hero-inner a:active {
   color: #74bf95;
 }
-.hero-inner-heading {
+.hero-inner-home-heading {
   color: #fff;
   font-weight: 600;
   margin-bottom: 16px;
 }
 @media (min-width: 580px) {
-  .hero-inner-heading {
+  .hero-inner-home-heading {
     font-size: 48px;
   }
 }
@@ -892,13 +892,17 @@ ul {
   max-width: 870px;
   margin: 0 auto;
 }
-.hero-inner-page-header {
+.hero-inner-page-heading {
   color: #fff;
-  font-size: 58px;
   background: #00cdff61;
   margin: 0 auto;
   width: fit-content;
   padding: 0 5%;
+}
+@media (min-width: 580px) {
+  .hero-inner-page-heading {
+    font-size: 48px;
+  }
 }
 
 .page-header {
@@ -951,7 +955,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   min-height: 50px;
   padding-bottom: 15px;
 }
