@@ -125,8 +125,7 @@ textarea:focus {
 }
 
 .container-divider {
-  border-top: 1px solid #ddd;
-  margin-bottom: 20px;
+  margin-top: 90px;
 }
 
 ul {
@@ -139,12 +138,25 @@ ul {
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 5%;
+  min-height: 65vh;
 }
 @media (min-width: 1160px) {
   .error-page {
     padding: 0;
     width: 90%;
   }
+}
+.error-page-heading {
+  font-size: 38px;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .error-page-heading {
+    font-size: 48px;
+  }
+}
+.error-page-status-code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 .dropdown-toggle {

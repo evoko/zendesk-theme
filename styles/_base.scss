@@ -121,8 +121,7 @@ textarea {
 }
 
 .container-divider {
-  border-top: 1px solid $border-color;
-  margin-bottom: 20px;
+  margin-top: $header-height + 20px;
 }
 
 ul {
@@ -133,6 +132,20 @@ ul {
 
 .error-page {
   @include max-width-container;
+  min-height: 65vh;
+
+  &-heading {
+    font-size: 38px;
+    font-weight: $font-weight-semibold;
+
+    @media (min-width: $tablet-width) {
+      font-size: 48px;
+    }
+  }
+
+  &-status-code {
+    font-family: $mono_font;
+  }
 }
 
 .dropdown-toggle {
