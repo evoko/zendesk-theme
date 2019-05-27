@@ -8,13 +8,17 @@
   margin-bottom: 40px;
 }
 
-.section h2 {
-  margin-bottom: 10px;
-  text-align: center;
-}
+// .section h2 {
+//   margin-bottom: 10px;
+//   text-align: center;
+// }
 
 .home-categories-heading {
   text-align: center;
+
+  @media (max-width: 580px) {
+    font-size: 26px;
+  }
 }
 
 /***** Promoted articles *****/

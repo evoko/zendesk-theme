@@ -1,59 +1,99 @@
-<div class="container-divider"></div>
+<section class="section hero hero-small">
+  <header class="hero-inner">
+    <h1 class="hero-inner-page-header" id="hero-inner-page-header"></h1>
+    {{#if section.description}}
+    <p class="page-header-description">{{section.description}}</p>
+    {{/if}}
+  </header>
+</section>
+
 <div class="container">
   <nav class="sub-nav">
     {{breadcrumbs}}
-    {{search submit=false}}
+    {{#if settings.show_follow_section}}
+    {{subscribe}}
+    {{/if}}
   </nav>
 
   <div class="section-container">
     <section class="section-content">
       <header class="page-header">
         <h1>
+          {{#is section.name 'Getting started!'}}
+          <i class="fas fa-rocket" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Getting started'}}
+          <i class=" fas fa-rocket" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Getting started v1.x'}}
+          <i class=" fas fa-rocket" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Getting started v2.x'}}
+          <i class=" fas fa-rocket" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Frequently asked questions'}}
+          <i class=" fas fa-question-circle" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Troubleshooting'}}
+          <i class=" fas fa-cogs" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Release notes'}}
+          <i class=" far fa-file-alt" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Administration tasks'}}
+          <i class=" fab fa-stack-overflow" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Beta features'}}
+          <i class=" fas fa-flask" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Evoko Home API'}}
+          <i class=" fas fa-file-code fa-2x" style="color:#74BF95;"></i>
+          {{/is}}
           {{section.name}}
         </h1>
-        {{#if settings.show_follow_section}}
-          {{subscribe}}
-        {{/if}}
         {{#if section.description}}
-          <p class="page-header-description">{{section.description}}</p>
+        <p class=" page-header-description">{{section.description}}</p>
         {{/if}}
       </header>
 
       {{#if section.sections}}
-        <ul class="section-list section-list--collapsed">
-          {{#each section.sections}}
-          <li class="section-list-item">
-              <a href="{{url}}">
-                <span>{{name}}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" aria-hidden="true">
-                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 14.5l6.1-6.1c.2-.2.2-.5 0-.7L5 1.5"/>
-                </svg>
-              </a>
-            </li>
-          {{/each}}
-          <a tabindex="0" class="see-all-sections-trigger" aria-hidden="true" id="see-all-sections-trigger" title="{{t 'see_all_sections'}}">{{t 'see_all_sections'}}</a>
-        </ul>
+      <ul class="section-list section-list--collapsed">
+        {{#each section.sections}}
+        <li class="section-list-item">
+          <a href="{{url}}">
+            <span>{{name}}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16"
+              aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                d="M5 14.5l6.1-6.1c.2-.2.2-.5 0-.7L5 1.5" />
+            </svg>
+          </a>
+        </li>
+        {{/each}}
+        <a tabindex="0" class="see-all-sections-trigger" aria-hidden="true" id="see-all-sections-trigger"
+          title="{{t 'see_all_sections'}}">{{t 'see_all_sections'}}</a>
+      </ul>
       {{/if}}
 
 
       {{#if section.articles}}
-        <ul class="article-list">
-          {{#each section.articles}}
-            <li class="article-list-item {{#if promoted}} article-promoted{{/if}}">
-              {{#if promoted}}
-                <span data-title="{{t 'promoted'}}" class="icon-star"></span>
-              {{/if}}
-              <a href="{{url}}" class="article-list-link">{{title}}</a>
-              {{#if internal}}
-                <span class="icon-lock" title="{{t 'internal'}}"></span>
-              {{/if}}
-            </li>
-          {{/each}}
-        </ul>
+      <ul class="article-list">
+        {{#each section.articles}}
+        <li class="article-list-item {{#if promoted}} article-promoted{{/if}}">
+          {{#if promoted}}
+          <span data-title="{{t 'promoted'}}" class="icon-star"></span>
+          {{/if}}
+          <a href="{{url}}" class="article-list-link">{{title}}</a>
+          {{#if internal}}
+          <span class="icon-lock" title="{{t 'internal'}}"></span>
+          {{/if}}
+        </li>
+        {{/each}}
+      </ul>
       {{else}}
-        <i class="section-empty">
-          <a href="{{section.url}}">{{t 'empty'}}</a>
-        </i>
+      <i class="section-empty">
+        <a href="{{section.url}}">{{t 'empty'}}</a>
+      </i>
       {{/if}}
 
       {{pagination}}
@@ -61,3 +101,10 @@
     </section>
   </div>
 </div>
+
+<script>
+  // get category name from section page
+  var breadcrumbs = document.getElementsByClassName("breadcrumbs");
+  var categoryName = breadcrumbs[0].children[1].title;
+  document.getElementById("hero-inner-page-header").innerHTML = categoryName;
+</script>

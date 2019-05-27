@@ -7,14 +7,17 @@
   .header {
     background-color: transparent;
     box-shadow: none;
+    position: relative;
   }
 </style>
-<section class="section hero">
+<section class="section hero hero-large">
 
   <div class="hero-inner">
-    <h1 class="hero-inner-heading">Hi. Looking for help?</h1>
-    {{search submit=false instant=settings.instant_search class="search search-full" placeholder="Search our knowledge base"}}
-    <p><strong><i class="fas fa-book"></i> Guides:</strong> getting started with <a
+    <h1 class="hero-inner-heading">Hi. How can we help?</h1>
+    <div class="hero-inner-search">
+      {{search submit=false instant=settings.instant_search class="search search-full" placeholder="Search our knowledge base"}}
+    </div>
+    <p class="hero-inner-paragraph"><strong><i class="fas fa-book"></i> Guides:</strong> getting started with <a
         href="/hc/en-us/sections/360002082891">Evoko Liso</a> or <a href="/hc/en-us/sections/115001583583">Evoko
         Pusco</a>?</p>
   </div>

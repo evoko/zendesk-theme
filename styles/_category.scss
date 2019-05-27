@@ -7,7 +7,7 @@
 
   &-content {
     @include desktop {
-      flex: 0 0 80%;
+      flex: 0 0 100%;
     }
 
     flex: 1;
@@ -15,21 +15,31 @@
 }
 
 .section-tree {
-  @include tablet { flex-direction: row; }
+  @include tablet {
+    flex-direction: row;
+  }
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
 
   .section {
-    @include tablet { flex: 0 0 45%; /* Two columns for tablet and desktop. Leaving 5% separation between columns */ }
+    @include tablet {
+      flex: 0 0 45%; /* Two columns for tablet and desktop. Leaving 5% separation between columns */
+    }
     flex: initial;
   }
 
   &-title {
-    margin-bottom: 0;
+    margin-bottom: 0px;
+    padding-bottom: 6px;
+    font-size: 22px;
+    border-bottom: 1px solid $border_color;
+    font-weight: $font-weight-semibold;
 
-    a { color: $text_color; }
+    a {
+      color: $text_color;
+    }
   }
 
   .see-all-articles {
@@ -39,11 +49,17 @@
 }
 
 .article-list {
+  list-style: disc;
+  padding: 0 20px;
+  margin: 0px 0 16px 12px;
+
   &-item {
     font-size: $font-size-bigger;
-    padding: 15px 0;
+    padding: 8px 0;
 
-    a { color: $text_color; }
+    a {
+      color: $text_color;
+    }
 
     .icon-lock::before {
       vertical-align: baseline;
@@ -51,7 +67,11 @@
   }
 }
 
+.article-promoted {
+  list-style: none;
+}
+
 .icon-star::before {
-  color: $brand_color;
-  font-size: 18px;
+  margin-left: -25px;
+  margin-right: 2px;
 }
