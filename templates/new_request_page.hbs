@@ -1,18 +1,21 @@
-<div class="container-divider"></div>
+<section class="section hero hero-small">
+  <div class="hero-inner">
+    <h1 class="hero-inner-page-heading">
+      <i class="fas fa-paper-plane"></i> {{t 'submit_a_request'}}
+      {{#if follow_up}}
+      <span class="follow-up-hint">{{follow_up}}</span>
+      {{/if}}
+    </h1>
+    <p class="hero-inner-description">Technical issues, questions, feedback, bug reports, warranty claims - we're here
+      for it all, fill out the form to get in touch with a human 🤖
+    </p>
+  </div>
+</section>
+
 <div class="container">
   <nav class="sub-nav">
     {{breadcrumbs}}
-    {{search submit=false}}
   </nav>
-
-  <h1>
-    {{t 'submit_a_request'}}
-    {{#if follow_up}}
-      <span class="follow-up-hint">
-        {{follow_up}}
-      </span>
-    {{/if}}
-  </h1>
 
   <div class="form">
     {{request_form}}

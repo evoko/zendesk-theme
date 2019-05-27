@@ -75,6 +75,14 @@
       margin: 0 auto;
     }
 
+    &-description {
+      font-size: $font-size-base;
+
+      @media (min-width: 580px) {
+        font-size: $font-size-bigger;
+      }
+    }
+
     &-page-heading {
       color: $brand_text_color;
       background: #00cdff61;

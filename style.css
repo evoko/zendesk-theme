@@ -290,7 +290,8 @@ ul {
 
 /***** Forms *****/
 .form {
-  max-width: 650px;
+  max-width: 870px;
+  margin: 0 auto;
 }
 
 .form-field ~ .form-field {
@@ -299,7 +300,7 @@ ul {
 
 .form-field label {
   display: block;
-  font-size: 13px;
+  font-size: 16px;
   margin-bottom: 5px;
 }
 
@@ -891,6 +892,14 @@ ul {
 .hero-inner-search {
   max-width: 870px;
   margin: 0 auto;
+}
+.hero-inner-description {
+  font-size: 16px;
+}
+@media (min-width: 580px) {
+  .hero-inner-description {
+    font-size: 18px;
+  }
 }
 .hero-inner-page-heading {
   color: #fff;
@@ -3873,6 +3882,10 @@ html[lang|=ko] .search-result-description em,
 html[lang|=ja] .search-result-description em {
   font-style: normal;
   background: yellow;
+}
+
+.follow-up-hint {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

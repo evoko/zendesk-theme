@@ -1,7 +1,8 @@
 /***** Forms *****/
 
 .form {
-  max-width: 650px;
+  max-width: 870px;
+  margin: 0 auto;
 }
 
 .form-field ~ .form-field {
@@ -10,7 +11,7 @@
 
 .form-field label {
   display: block;
-  font-size: $font-size-small;
+  font-size: $font-size-base;
   margin-bottom: 5px;
 }
 
@@ -20,17 +21,21 @@
   padding: 10px;
   width: 100%;
 
-  &:focus { border: 1px solid $brand_color; }
+  &:focus {
+    border: 1px solid $brand_color;
+  }
 }
 
-.form-field input[type="text"] {
+.form-field input[type='text'] {
   border: 1px solid $border-color;
   border-radius: 4px;
 
-  &:focus { border: 1px solid $brand_color; }
+  &:focus {
+    border: 1px solid $brand_color;
+  }
 }
 
-.form-field input[type="checkbox"] {
+.form-field input[type='checkbox'] {
   width: auto;
 }
 
@@ -58,12 +63,12 @@
   vertical-align: middle;
 }
 
-.form-field input[type="checkbox"] + label {
+.form-field input[type='checkbox'] + label {
   margin: 0 0 0 10px;
 }
 
 .form-field.required > label::after {
-  content: "*";
+  content: '*';
   color: #f00;
   margin-left: 2px;
 }
@@ -79,8 +84,8 @@
   margin: 5px 0;
 }
 
-[data-loading="true"] input,
-[data-loading="true"] textarea {
+[data-loading='true'] input,
+[data-loading='true'] textarea {
   background: transparent url($assets-loader-gif) 99% 50% no-repeat;
   background-size: 16px 16px;
 }
@@ -109,6 +114,8 @@
   li {
     padding: 10px 0;
 
-    a:visited { color: $visited-link-color; }
+    a:visited {
+      color: $visited-link-color;
+    }
   }
 }
