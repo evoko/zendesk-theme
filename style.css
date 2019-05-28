@@ -125,7 +125,7 @@ textarea:focus {
 }
 
 .container-divider {
-  margin-top: 90px;
+  margin-bottom: 20px;
 }
 
 ul {
@@ -148,7 +148,7 @@ ul {
 }
 .error-page-heading {
   font-size: 38px;
-  font-weight: 600;
+  font-weight: bold;
 }
 @media (min-width: 768px) {
   .error-page-heading {
@@ -416,7 +416,7 @@ ul {
 
 /***** Header *****/
 .header {
-  position: fixed;
+  position: relative;
   width: 100%;
   align-items: center;
   display: flex;
@@ -454,7 +454,7 @@ ul {
 .evoko-logo-fav {
   display: none;
 }
-@media (max-width: 580px) {
+@media (max-width: 768px) {
   .evoko-logo-fav {
     display: inline;
   }
@@ -463,7 +463,7 @@ ul {
 .evoko-logo-full {
   display: inline;
 }
-@media (max-width: 580px) {
+@media (max-width: 768px) {
   .evoko-logo-full {
     display: none;
   }
@@ -837,6 +837,9 @@ ul {
   background-color: #464f59;
   border: none;
 }
+.search-header input[type=search]::placeholder {
+  color: #777;
+}
 
 /***** Hero component *****/
 .hero {
@@ -849,12 +852,11 @@ ul {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 .hero-large {
-  height: 70vh;
+  height: 85vh;
   margin-top: -70px;
 }
 .hero-small {
   height: 300px;
-  margin-top: 70px;
 }
 .hero-large::before, .hero-small::before {
   position: absolute;
@@ -866,10 +868,10 @@ ul {
   content: "";
   opacity: 0.75;
   background-color: #24292e;
-  background-image: linear-gradient(60deg, #31694a 20%, #24292e 70%);
+  background-image: linear-gradient(60deg, #397b56 20%, #24292e 70%);
 }
 .hero-large::before {
-  max-height: 70vh;
+  max-height: 85vh;
 }
 .hero-small::before {
   max-height: 300px;
@@ -917,6 +919,7 @@ ul {
   color: #fff;
   background: #00cdff61;
   margin: 0 auto;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 0 5%;
 }

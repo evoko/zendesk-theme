@@ -121,7 +121,7 @@ textarea {
 }
 
 .container-divider {
-  margin-top: $header-height + 20px;
+  margin-bottom: 20px;
 }
 
 ul {
@@ -136,7 +136,7 @@ ul {
 
   &-heading {
     font-size: 38px;
-    font-weight: $font-weight-semibold;
+    font-weight: bold;
 
     @media (min-width: $tablet-width) {
       font-size: 48px;

@@ -7,15 +7,14 @@
   .header {
     background-color: transparent;
     box-shadow: none;
-    position: relative;
   }
 </style>
-<section class="section hero hero-large">
 
+<section class="section hero hero-large">
   <div class="hero-inner">
     <h1 class="hero-inner-home-heading">Hi. How can we help?</h1>
     <div class="hero-inner-search">
-      {{search submit=false instant=settings.instant_search class="search search-full" placeholder="Search our knowledge base"}}
+      {{search submit=false instant=settings.instant_search class="search search-full" placeholder="Search knowledge base..."}}
     </div>
     <p class="hero-inner-description"><strong><i class="fas fa-book"></i> Guides:</strong> getting started with <a
         href="/hc/en-us/sections/360002082891">Evoko Liso</a> or <a href="/hc/en-us/sections/115001583583">Evoko
@@ -25,7 +24,7 @@
 
 <div class="container">
   <section class="section knowledge-base">
-    <h1 class="home-categories-heading">Browse our knowledge base</h1>
+    <h1 class="home-categories-heading">Browse knowledge base</h1>
     <section class="categories blocks">
       <ul class="blocks-list">
         {{#each categories}}

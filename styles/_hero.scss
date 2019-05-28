@@ -10,13 +10,12 @@
     0 2px 4px -1px rgba(0, 0, 0, 0.2);
 
   &-large {
-    height: 70vh;
+    height: 85vh;
     margin-top: -$header-height;
   }
 
   &-small {
     height: 300px;
-    margin-top: $header-height;
   }
 
   &-large::before,
@@ -30,11 +29,11 @@
     content: '';
     opacity: 0.75;
     background-color: $text_color;
-    background-image: linear-gradient(60deg, darken($brand_color, 30%) 20%, $text_color 70%);
+    background-image: linear-gradient(60deg, darken($brand_color, 25%) 20%, $text_color 70%);
   }
 
   &-large::before {
-    max-height: 70vh;
+    max-height: 85vh;
   }
 
   &-small::before {
@@ -87,6 +86,7 @@
       color: $brand_text_color;
       background: #00cdff61;
       margin: 0 auto;
+      width: -moz-fit-content;
       width: fit-content;
       padding: 0 5%;
 

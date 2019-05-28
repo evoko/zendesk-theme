@@ -58,4 +58,8 @@
     background-color: lighten($text-color, 15%);
     border: none;
   }
+
+  &-header input[type='search']::placeholder {
+    color: #777;
+  }
 }

@@ -1,6 +1,6 @@
 /***** Header *****/
 .header {
-  position: fixed;
+  position: relative;
   width: 100%;
   align-items: center;
   display: flex;
@@ -41,14 +41,14 @@
 
 .evoko-logo-fav {
   display: none;
-  @media (max-width: 580px) {
+  @media (max-width: $tablet-width) {
     display: inline;
   }
 }
 
 .evoko-logo-full {
   display: inline;
-  @media (max-width: 580px) {
+  @media (max-width: $tablet-width) {
     display: none;
   }
 }
