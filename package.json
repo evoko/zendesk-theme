@@ -3,7 +3,7 @@
   "version": "1.5.0",
   "description": "Evoko Theme for Zendesk Guide",
   "homepage": "https://support.evoko.se/hc/en-us",
-  "repository": "github:rottbers/evoko-zendesk-theme",
+  "repository": "github:rottbers/zendesk-theme",
   "license": "Apache-2.0",
   "scripts": {
     "preview": "zat theme preview",
@@ -11,10 +11,16 @@
     "prettier:check": "prettier --check \"./**/*.{js,json,scss,md}\"",
     "prettier:write": "prettier --write \"./**/*.{js,json,scss,md}\"",
     "styles:watch": "sass styles/index.scss:style.css --watch",
-    "styles:build": "sass styles/index.scss:style.css --style compressed"
+    "styles:build": "sass styles/index.scss:style.css --style compressed && postcss style.css --use autoprefixer --replace --no-map"
   },
   "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "browserslist": "^4.6.1",
+    "postcss-cli": "^6.1.2",
     "prettier": "^1.17.1",
     "sass": "^1.20.1"
-  }
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }
