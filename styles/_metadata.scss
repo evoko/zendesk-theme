@@ -9,11 +9,11 @@
 
 .meta-data {
   color: $secondary-text-color;
-  font-size: $font-size-small;
-  font-weight: $font-weight-light;
+  font-size: $font-size-navigation;
+  // font-weight: $font-weight-light;
 
   &:not(:last-child)::after {
-    content: "\00B7";
+    content: '\00B7';
     margin: 0 5px;
   }
 }

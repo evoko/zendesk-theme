@@ -34,17 +34,11 @@
     margin-bottom: 0px;
     padding-bottom: 6px;
     font-size: 22px;
-    border-bottom: 1px solid $border_color;
     font-weight: $font-weight-semibold;
 
     a {
       color: $text_color;
     }
-  }
-
-  .see-all-articles {
-    display: block;
-    padding: 15px 0;
   }
 }
 
@@ -52,10 +46,15 @@
   list-style: disc;
   padding: 0 20px;
   margin: 0px 0 16px 12px;
+  border-top: 1px solid $border_color;
 
   &-item {
     font-size: $font-size-bigger;
     padding: 8px 0;
+
+    &:first-child {
+      margin-top: 8px;
+    }
 
     a {
       color: $text_color;
@@ -65,6 +64,13 @@
       vertical-align: baseline;
     }
   }
+}
+
+.see-all-articles {
+  padding: 6px 12px;
+  border-radius: $border-radius;
+  background-color: rgba(lighten($brand-blue-color, 20%), 0.7);
+  color: $text_color;
 }
 
 .article-promoted {

@@ -10,12 +10,17 @@
     0 2px 4px -1px rgba(0, 0, 0, 0.2);
 
   &-large {
-    height: 85vh;
     margin-top: -$header-height;
   }
 
-  &-small {
-    height: 300px;
+  &-large,
+  &-large::before {
+    height: 85vh;
+  }
+
+  &-small,
+  &-small::before {
+    height: $header-height * 2;
   }
 
   &-large::before,
@@ -30,14 +35,6 @@
     opacity: 0.75;
     background-color: $text_color;
     background-image: linear-gradient(60deg, darken($brand_color, 25%) 20%, $text_color 70%);
-  }
-
-  &-large::before {
-    max-height: 85vh;
-  }
-
-  &-small::before {
-    max-height: 300px;
   }
 
   &-inner {
@@ -76,10 +73,6 @@
 
     &-description {
       font-size: $font-size-base;
-
-      @media (min-width: 580px) {
-        font-size: $font-size-bigger;
-      }
     }
 
     &-page-heading {

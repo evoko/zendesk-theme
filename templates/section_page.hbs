@@ -1,53 +1,60 @@
 <section class="section hero hero-small">
   <header class="hero-inner">
-    <h1 class="hero-inner-page-heading">
-      {{#is section.name 'Getting started!'}}
-      <i class="fas fa-rocket"></i>
-      {{/is}}
-      {{#is section.name 'Getting started'}}
-      <i class=" fas fa-rocket"></i>
-      {{/is}}
-      {{#is section.name 'Getting started v1.x'}}
-      <i class=" fas fa-rocket"></i>
-      {{/is}}
-      {{#is section.name 'Getting started v2.x'}}
-      <i class=" fas fa-rocket"></i>
-      {{/is}}
-      {{#is section.name 'Frequently asked questions'}}
-      <i class=" fas fa-question-circle"></i>
-      {{/is}}
-      {{#is section.name 'Troubleshooting'}}
-      <i class=" fas fa-cogs"></i>
-      {{/is}}
-      {{#is section.name 'Release notes'}}
-      <i class=" far fa-file-alt"></i>
-      {{/is}}
-      {{#is section.name 'Administration tasks'}}
-      <i class=" fab fa-stack-overflow"></i>
-      {{/is}}
-      {{#is section.name 'Beta features'}}
-      <i class=" fas fa-flask"></i>
-      {{/is}}
-      {{#is section.name 'Evoko Home API'}}
-      <i class=" fas fa-file-code fa-2x"></i>
-      {{/is}}
-      {{section.name}}
-    </h1>
-    {{#if section.description}}
-    <p class="hero-inner-description">{{section.description}}</p>
-    {{/if}}
+    <div class="hero-inner-search">
+      {{search submit=false scoped=settings.scoped_kb_search class="search search-full" placeholder="Search knowledge base..."}}
+    </div>
   </header>
 </section>
 
 <div class="container">
+
   <nav class="sub-nav">
     {{breadcrumbs}}
-    {{#if settings.show_follow_section}}
-    {{subscribe}}
-    {{/if}}
   </nav>
+
   <div class="section-container">
     <section class="section-content">
+      <header class="page-header">
+        <h1>
+          {{#is section.name 'Getting started!'}}
+          <i class="fas fa-rocket" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Getting started'}}
+          <i class=" fas fa-rocket" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Getting started v1.x'}}
+          <i class=" fas fa-rocket" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Getting started v2.x'}}
+          <i class=" fas fa-rocket" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Frequently asked questions'}}
+          <i class=" fas fa-question-circle" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Troubleshooting'}}
+          <i class=" fas fa-cogs" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Release notes'}}
+          <i class=" far fa-file-alt" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Administration tasks'}}
+          <i class=" fab fa-stack-overflow" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Beta features'}}
+          <i class=" fas fa-flask" style="color:#74BF95;"></i>
+          {{/is}}
+          {{#is section.name 'Evoko Home API'}}
+          <i class=" fas fa-file-code fa-2x" style="color:#74BF95;"></i>
+          {{/is}}
+          {{section.name}}
+        </h1>
+        {{#if settings.show_follow_section}}
+        {{subscribe}}
+        {{/if}}
+        {{#if section.description}}
+        <p class="page-header-description">{{section.description}}</p>
+        {{/if}}
+      </header>
       {{#if section.sections}}
       <ul class="section-list section-list--collapsed">
         {{#each section.sections}}
@@ -94,9 +101,11 @@
   </div>
 </div>
 
+{{!-- get category name and add to search bar placeholder --}}
+{{#if settings.scoped_kb_search}}
 <script>
-  // get category name from section page
   var breadcrumbs = document.getElementsByClassName("breadcrumbs");
   var categoryName = breadcrumbs[0].children[1].title;
-  document.getElementById("hero-inner-page-header").innerHTML = categoryName;
+  document.getElementById("query").placeholder = "Search " + categoryName + "...";
 </script>
+{{/if}}

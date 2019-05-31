@@ -61,13 +61,6 @@
   margin-left: 10px;
 }
 
-// TODO: Improve header search bar behavior for mobile
-.header-search {
-  width: 100%;
-  max-width: 600px;
-  padding: 0 20px;
-}
-
 .user-nav {
   @include tablet {
     position: relative;

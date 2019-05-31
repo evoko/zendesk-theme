@@ -1,9 +1,8 @@
 <section class="section hero hero-small">
   <header class="hero-inner">
-    <h1 class="hero-inner-page-heading">{{category.name}}</h1>
-    {{#if category.description}}
-    <p class="hero-inner-description">{{category.description}}</p>
-    {{/if}}
+    <div class="hero-inner-search">
+      {{search submit=false scoped=settings.scoped_kb_search class="search search-full" placeholder="Search knowledge base..."}}
+    </div>
   </header>
 </section>
 
@@ -15,6 +14,10 @@
 
   <div class="category-container">
     <div class="category-content">
+      {{!-- <header class="page-header">
+        <h1>{{category.name}}</h1>
+        {{#if category.description}}<p class="page-header-description">{{category.description}}</p>{{/if}}
+      </header> --}}
 
       <div class="section-tree">
         {{#each sections}}
@@ -82,3 +85,12 @@
     </div>
   </div>
 </div>
+
+{{!-- get category name and add to search bar placeholder --}}
+{{#if settings.scoped_kb_search}}
+<script>
+  var breadcrumbs = document.getElementsByClassName("breadcrumbs");
+  var categoryName = breadcrumbs[0].children[1].title;
+  document.getElementById("query").placeholder = "Search " + categoryName + "...";
+</script>
+{{/if}}

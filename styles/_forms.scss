@@ -3,6 +3,27 @@
 .form {
   max-width: 870px;
   margin: 0 auto;
+  min-height: 55vh;
+
+  &-header {
+    margin-bottom: 40px;
+    text-align: center;
+
+    &-heading {
+      background-color: rgba(lighten($brand-blue-color, 20%), 0.7);
+      margin: 0 auto;
+      width: -moz-fit-content;
+      width: fit-content;
+      padding: 0 5%;
+      font-weight: $font-weight-semibold;
+
+      @media (min-width: $tablet-width) {
+        font-size: 48px;
+      }
+    }
+    &-description {
+    }
+  }
 }
 
 .form-field ~ .form-field {

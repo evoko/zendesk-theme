@@ -1,13 +1,13 @@
 /***** Search results *****/
 .search-results {
   @include desktop {
-    flex-direction: row;
+    max-width: 870px;
+    margin: 0 auto;
   }
 
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-between;
 
   &-column {
     @include desktop {
@@ -17,60 +17,71 @@
     flex: 1;
   }
 
+  &-heading {
+    font-weight: $font-weight-semibold;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 16px;
+    margin-bottom: 0px;
+  }
+
   &-list {
     margin-bottom: 25px;
     > li {
       border-bottom: 1px solid $border-color;
-      padding: 20px 0;
-      &:first-child {
-        border-top: 1px solid $border-color;
-      }
+      padding: 24px 0;
     }
   }
 }
 
 .search-result {
+  &-link {
+    font-size: $font-size-bigger;
+    font-weight: $font-weight-semibold;
+    padding-bottom: 8px;
+  }
 
   &-description {
-    margin-top: 15px;
+    margin-bottom: 8px;
+    margin-top: 8px;
     word-break: break-word;
+
+    em {
+      font-style: normal;
+      font-weight: $font-weight-semibold;
+      background-color: rgba(lighten($brand-yellow-color, 20%), 0.7);
+      padding: 0px 2px;
+    }
   }
 
   &-votes,
+  &-comments,
   &-meta-count {
     color: $secondary-text-color;
     display: inline-block;
-    font-size: $font-size-small;
-    font-weight: $font-weight-light;
-    padding: 4px 5px;
+    font-size: $font-size-navigation;
+    // font-weight: $font-weight-light;
+    // padding: 4px 5px;
     position: relative;
 
     &::before {
       @extend .icon;
       color: $brand_color;
-    }
-
-    [dir="ltr"] & {
-      margin-left: 5px;
-      &::before {
-        margin-right: 3px;
-      }
-    }
-
-    [dir="rtl"] & {
-      margin-right: 5px;
-      &::before {
-        margin-left: 3px;
-      }
+      font-weight: $font-weight-semibold;
+      margin-right: 3px;
     }
   }
 
   &-votes::before {
-    content: "\1F44D";
+    content: '\1F44D';
+  }
+
+  &-comments::before {
+    content: '\1F4AC';
+    margin-right: 5px;
   }
 
   &-meta-count::before {
-    content: "\1F4AC";
+    content: '\1F4AC';
   }
 
   .meta-group {
@@ -81,18 +92,18 @@
     margin: 0;
 
     li:last-child::after {
-       content: "·";
-       display: inline-block;
-       margin: 0 5px;
+      content: '·';
+      display: inline-block;
+      margin: 0 5px;
     }
   }
 }
 
 /* Don't display CJK results in italic */
 /* Add a yellow background instead */
-html[lang|="zh"],
-html[lang|="ko"],
-html[lang|="ja"] {
+html[lang|='zh'],
+html[lang|='ko'],
+html[lang|='ja'] {
   .search-result-description em {
     font-style: normal;
     background: yellow;
