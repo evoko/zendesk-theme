@@ -13,13 +13,11 @@
     margin-top: -$header-height;
   }
 
-  &-large,
-  &-large::before {
+  &-large {
     height: 85vh;
   }
 
-  &-small,
-  &-small::before {
+  &-small {
     height: $header-height * 2;
   }
 
@@ -35,6 +33,14 @@
     opacity: 0.75;
     background-color: $text_color;
     background-image: linear-gradient(60deg, darken($brand_color, 25%) 20%, $text_color 70%);
+  }
+
+  &-large::before {
+    max-height: 85vh;
+  }
+
+  &-small::before {
+    max-height: $header-height * 2;
   }
 
   &-inner {
