@@ -2,35 +2,42 @@
 .collapsible-sidebar {
   @include desktop {
     max-height: none;
-    padding: 0;
+    border-radius: $border-radius;
+    border: 1px solid $border_color;
+    padding: 0px;
   }
+
   flex: 1;
   max-height: 45px;
   overflow: hidden;
   padding: 10px 0;
   position: relative;
 
-  &[aria-expanded="true"] {
+  &[aria-expanded='true'] {
     max-height: none;
 
     .collapsible-sidebar-title::after {
-      @include desktop { display: none; }
-      content: "\2715";
+      @include desktop {
+        display: none;
+      }
+      content: '\2715';
     }
   }
 
   &-title {
     margin-top: 0;
 
-      &::after {
+    &::after {
       @extend .icon;
-      @include desktop { display: none; }
+      @include desktop {
+        display: none;
+      }
       @include vertical-align;
-      content: "\25BE";
+      content: '\25BE';
       position: absolute;
       right: 10px;
 
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         left: 10px;
         right: auto;
       }

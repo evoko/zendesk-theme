@@ -16,8 +16,8 @@ $visited-link-color: zass-darken($link_color, 20%);
 $hover-button-color: zass-darken($brand_color, 20%);
 $secondary-text-color: zass-lighten($text_color, 20%);
 
-$primary-shade: zass-darken($background_color, 3%);
-$secondary-shade: zass-darken($background_color, 5%);
+$primary-shade: darken($background_color, 3%);
+$secondary-shade: darken($background_color, 5%);
 
 $border-color: #ddd;
 

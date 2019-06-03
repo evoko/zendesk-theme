@@ -7,7 +7,7 @@
   */
   @include desktop {
     flex: 1 0 66%;
-    max-width: 66%;
+    max-width: 800px;
     min-width: 640px;
     padding: 0 30px;
   }
@@ -52,7 +52,7 @@
     }
 
     .icon-lock::before {
-      content: "\1F512";
+      content: '\1F512';
       font-size: 20px;
       position: relative;
       left: -5px;
@@ -60,8 +60,10 @@
     }
   }
 
-  [role="button"] {
-    @include tablet { width: auto; }
+  [role='button'] {
+    @include tablet {
+      width: auto;
+    }
     flex-shrink: 0; /*Avoid collapsing elements in Safari (https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored)*/
     width: 100%;
   }
@@ -77,7 +79,9 @@
 
   &-body {
     @include content-body;
-    > p:last-child { margin-bottom: 0; }
+    > p:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &-content {
@@ -103,7 +107,7 @@
 
     .icon-comments {
       color: $brand_color;
-      content: "\1F4AC";
+      content: '\1F4AC';
       display: inline-block;
       font-size: 18px;
       padding: 5px;
@@ -113,7 +117,7 @@
   &-sidebar {
     @include desktop {
       border: 0;
-      flex: 0 0 17%;
+      flex: 0 0 21%;
       height: auto;
     }
 
@@ -140,12 +144,15 @@
       overflow-wrap: break-word;
       margin-right: 0;
 
-      &:last-child { padding: 0; }
+      &:last-child {
+        padding: 0;
+      }
 
-      @include tablet { padding-right: 20px; }
+      @include tablet {
+        padding-right: 20px;
+      }
     }
   }
-
 
   &-votes {
     border-top: 1px solid $border-color;
@@ -166,7 +173,7 @@
       font-size: 8px;
       margin-right: 10px;
 
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         margin-right: 0;
         margin-left: 10px;
       }
@@ -188,18 +195,18 @@
 
     &:hover::before,
     &:hover::after,
-    &[aria-selected="true"]::before,
-    &[aria-selected="true"]::after {
+    &[aria-selected='true']::before,
+    &[aria-selected='true']::after {
       color: $brand_text_color;
     }
   }
 
   &-vote-up::before {
-    content: "\2713";
+    content: '\2713';
   }
 
   &-vote-down::before {
-    content: "\2715";
+    content: '\2715';
   }
 
   &-more-questions {
@@ -208,7 +215,9 @@
   }
 
   &-return-to-top {
-    @include desktop { display: none; }
+    @include desktop {
+      display: none;
+    }
 
     border-top: 1px solid $border-color;
 
@@ -227,7 +236,7 @@
       font-size: 16px;
       margin-left: 5px;
 
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         margin-right: 10px;
       }
     }
@@ -249,20 +258,37 @@
   &-title {
     font-size: $font-size-base;
     position: relative;
+
+    @include desktop {
+      text-align: center;
+      padding-top: 16px;
+    }
   }
 
   &-item {
     border-radius: 4px;
     color: $text_color;
     display: block;
-    font-weight: $font-weight-light;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 12px 10px;
+
+    @include desktop {
+      font-size: $font-size-navigation;
+      border-top: 1px solid $border-color;
+      margin: 0px;
+      border-radius: 0px;
+    }
+
+    &-show-all {
+      text-decoration: underline !important;
+      background-color: rgba(lighten($brand-blue-color, 20%), 0.7) !important;
+    }
 
     &.current-article,
-    &:hover {
-      background-color: $brand_color;
-      color: $brand_text_color;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $secondary-shade;
       text-decoration: none;
     }
   }
