@@ -26,7 +26,7 @@
   }
 
   &:hover:not(.pagination-current) {
-    background-color: darken($background_color, 12%);
+    background-color: $secondary-shade;
 
     span,
     a {

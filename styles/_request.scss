@@ -17,7 +17,9 @@
   }
 
   &-breadcrumbs {
-    @include desktop { margin-bottom: 60px; }
+    @include desktop {
+      margin-bottom: 60px;
+    }
     margin-bottom: 40px;
   }
 
@@ -25,12 +27,17 @@
     flex: 1 0 auto;
     order: 1;
 
-    .comment-fields, .request-submit-comment {
+    .comment-fields,
+    .request-submit-comment {
       display: none;
     }
 
-    .comment-fields.shown { display: block; }
-    .request-submit-comment.shown { display: inline; }
+    .comment-fields.shown {
+      display: block;
+    }
+    .request-submit-comment.shown {
+      display: inline;
+    }
 
     @include desktop {
       flex: 0 0 66%; // 4% spacing
@@ -41,7 +48,9 @@
     .comment-form-controls {
       display: block;
     }
-    .comment-ccs { display: block; }
+    .comment-ccs {
+      display: block;
+    }
 
     .comment-show-container {
       border-radius: 2px;
@@ -62,12 +71,12 @@
         border-bottom-right-radius: 0;
         border-bottom: 0;
 
-        &[data-hc-focus="true"] {
+        &[data-hc-focus='true'] {
           border: 1px solid $brand_color;
         }
       }
 
-      & > input[type="text"] {
+      & > input[type='text'] {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         border-bottom: 0;
@@ -84,7 +93,9 @@
       }
     }
 
-    input#mark_as_solved { display: none; }
+    input#mark_as_solved {
+      display: none;
+    }
   }
 
   &-title {
@@ -96,13 +107,14 @@
     }
 
     width: 100%;
+    font-weight: $font-weight-semibold;
   }
 
   &-sidebar {
     @include desktop {
       background-color: $primary-shade;
       border: 0;
-      font-size: $font-size-small;
+      border-radius: $border-radius;
       flex: 0 0 auto;
       padding: 0 20px;
       width: 30%; //IE11 fix
@@ -130,12 +142,15 @@
     margin: 0;
     padding-bottom: 20px;
 
-    &:last-child { border: 0; }
+    &:last-child {
+      border: 0;
+    }
 
-    dt, dd {
+    dt,
+    dd {
       display: inline-block;
       vertical-align: top;
-      font-size: $font-size-small;
+      font-size: $font-size-navigation;
       margin: 20px 0 0 0;
     }
 
@@ -144,14 +159,13 @@
       width: 60%;
 
       &::after {
-        content: "\A";
+        content: '\A';
         white-space: pre;
       }
     }
 
     dt {
-      color: $secondary-text-color;
-      font-weight: $font-weight-light;
+      font-weight: $font-weight-semibold;
       width: 40%;
     }
 
@@ -161,7 +175,8 @@
   }
 
   &-attachments {
-    dt, dd {
+    dt,
+    dd {
       width: 100%;
     }
 
