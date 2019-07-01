@@ -12,34 +12,34 @@ When importing a theme to Zendesk Guide it will mainly look for the following fi
 - [`Style.css`](#styles) - contains all CSS.
 - [`script.js`](#scripts) - main script file that will be included in the page `<head>`.
 - [`manifest.json`](#manifest-file) - project metadata and settings.
-- [`settings/`](#settings-folder) - files to be used in settings in [`manifest.json`](/blob/master/manifest.json).
+- [`settings/`](#settings-folder) - files to be used in settings in [`manifest.json`](manifest.json).
 - [`assets/`](#assets-folder) - assets such as scripts or images.
 
 Other files and folders can be added to the project but will (to my knowledge) be ignored when importing.
 
 ### Templates
 
-For markup Zendesk Guide uses [Handlebars](https://handlebarsjs.com/) and each template is stored in the [`templates/`](/blob/master/templates/) folder. All available templates for a Zendesk Guide theme that has all the features enabled are included however not all of them are used in our case (like "Community").
+For markup Zendesk Guide uses [Handlebars](https://handlebarsjs.com/) and each template is stored in the [`templates/`](templates/) folder. All available templates for a Zendesk Guide theme that has all the features enabled are included however not all of them are used in our case (like "Community").
 
-- Article page (`article_page.hbs`)
-- Category page (`category_page.hbs`)
-- Community post list page (`community_post_list_page.hbs`)
-- Community post page (`community_post_page.hbs`)
-- Community topic list page (`community_topic_list_page.hbs`)
-- Community topic page (`community_topic_page.hbs`)
-- Contributions page (`contributions_page.hbs`)
-- Document head (`document_head.hbs`)
-- Error page (`error_page.hbs`)
-- Footer (`footer.hbs`)
-- Header (`header.hbs`)
-- Home page (`home_page.hbs`)
-- New community post page (`new_community_post_page.hbs`)
-- New request page (`new_request_page.hbs`)
-- Requests page (`request_page.hbs`)
-- Search results page (`search_results.hbs`)
-- Section page (`section_page.hbs`)
-- Subscriptions page (`subscriptions_page.hbs`)
-- User profile page (`user_profile_page.hbs`)
+- Article page ([`article_page.hbs`](templates/article_page.hbs))
+- Category page ([`category_page.hbs`](templates/category_page.hbs))
+- Community post list page ([`community_post_list_page.hbs`](templates/community_post_list_page.hbs))
+- Community post page ([`community_post_page.hbs`](templates/community_post_page.hbs))
+- Community topic list page ([`community_topic_list_page.hbs`](templates/community_topic_list_page.hbs))
+- Community topic page ([`community_topic_page.hbs`](templates/community_topic_page.hbs))
+- Contributions page ([`contributions_page.hbs`](templates/contributions_page.hbs))
+- Document head ([`document_head.hbs`](templates/document_head.hbs))
+- Error page ([`error_page.hbs`](templates/error_page.hbs))
+- Footer ([`footer.hbs`](templates/footer.hbs))
+- Header ([`header.hbs`](templates/header.hbs))
+- Home page ([`home_page.hbs`](templates/home_page.hbs))
+- New community post page ([`new_community_post_page.hbs`](templates/new_community_post_page.hbs))
+- New request page ([`new_request_page.hbs`](templates/new_request_page.hbs))
+- Requests page ([`request_page.hbs`](templates/request_page.hbs))
+- Search results page ([`search_results.hbs`](templates/search_results.hbs))
+- Section page ([`section_page.hbs`](templates/section_page.hbs))
+- Subscriptions page ([`subscriptions_page.hbs`](templates/subscriptions_page.hbs))
+- User profile page ([`user_profile_page.hbs`](templates/user_profile_page.hbs))
 
 Additionally you can add up to 10 optional templates for:
 
@@ -52,21 +52,21 @@ Learn more [here](https://support.zendesk.com/hc/en-us/articles/360001948367).
 
 ### Styles
 
-The styles that Zendesk Guide will read are in the [`style.css`](/blob/master/style.css) file located in the project root.
+The styles that Zendesk Guide will read are in the [`style.css`](style.css) file located in the project root.
 
-For development this project uses the CSS preprocessor [Sass](https://sass-lang.com/) with the `.scss` syntax where we split styles into [Sass partials](https://sass-lang.com/guide#topic-4). All the partials are put under the [`styles/`](/blob/master/styles/) folder and included in the [`index.scss`](/blob/master/styles/index.scss) which is then compiled to [`style.css`](/blob/master/style.css).
+For development this project uses the CSS preprocessor [Sass](https://sass-lang.com/) with the `.scss` syntax where we split styles into [Sass partials](https://sass-lang.com/guide#topic-4). All the partials are put under the [`styles/`](styles/) folder and included in the [`index.scss`](styles/index.scss) which is then compiled to [`style.css`](style.css).
 
 `styles/_partial.scss` 🡆 `styles/index.scss` 🡆 `style.css`
 
 ### Scripts
 
-The main JavaScript file [`script.js`](/blob/master/script.js) is located in the project root and will be added in the document `<head>` of every page.
+The main JavaScript file [`script.js`](script.js) is located in the project root and will be added in the document `<head>` of every page.
 
 JavaScript that you do not think belong in the document `<head>` can be added inline in [templates](#templates) or added as regular `*.js` files in the [assets folder](#assets-folder) and then be included in the appropriate template(s).
 
 ### Assets folder
 
-You can add assets as images and files to the [`assets/`](/blob/master/assets/) folder and use them in your CSS and templates, for example:
+You can add assets as images and files to the [`assets/`](assets/) folder and use them in your CSS and templates, for example:
 
 ```shell
 # template
@@ -80,12 +80,12 @@ The assets will be uploaded to Zendesk CDN (`theme.zdassets.com`). You can read 
 
 ### Manifest file
 
-The [`manifest.json`](/blob/master/manifest.json) contains theme metadata and allows you to define a group of settings for your theme that can then be changed via the UI in theming center.
+The [`manifest.json`](manifest.json) contains theme metadata and allows you to define a group of settings for your theme that can then be changed via the UI in theming center.
 You can read more about the manifest file [here](https://support.zendesk.com/hc/en-us/articles/115012547687).
 
 ### Settings folder
 
-If you have a `type` variable of `file`, you need to provide a default file for that variable in the [`settings/`](/blob/master/settings/) folder. This file will be used on the settings panel by default and users can upload a different file if they like.
+If you have a `type` variable of `file`, you need to provide a default file for that variable in the [`settings/`](settings/) folder. This file will be used on the settings panel by default and users can upload a different file if they like.
 For Example, if you'd like to have a variable for the background image of a section, the variable in your manifest file would look something like this:
 
 ```json
@@ -103,7 +103,7 @@ For Example, if you'd like to have a variable for the background image of a sect
 }
 ```
 
-And this would look for a file inside the [`settings/`](/blob/master/settings/) folder named `background_image`.
+And this would look for a file inside the [`settings/`](settings/) folder named `background_image`.
 
 ## Developing
 
@@ -131,7 +131,7 @@ To make use of some development tools you will need to have [Node.js](https://no
 npm install
 ```
 
-In [`package.json`](/blob/master/package.json) you will find a list of the dev dependencies along with some [npm scripts](https://docs.npmjs.com/misc/scripts.html). Example on how to run a script:
+In [`package.json`](package.json) you will find a list of the dev dependencies along with some [npm scripts](https://docs.npmjs.com/misc/scripts.html). Example on how to run a script:
 
 ```shell
 # Watch Sass changes and write to style.css
@@ -145,7 +145,7 @@ npm run styles:build
 
 For deploying changes to production we use the [Zendesk GitHub integration](https://support.zendesk.com/hc/en-us/community/posts/360004400007), the workflow can be summarized to:
 
-1. Increment the `version` in [`manifest.json`](/blob/master/manifest.json) (without this Zendesk won't recognize an update).
+1. Increment the `version` in [`manifest.json`](manifest.json) (without this Zendesk won't recognize an update).
 2. Commit and merge your branch(es) to the master branch.
 3. In the [Zendesk Guide theming center](https://support.evoko.se/theming) press **Update from GitHub**.
 4. Changes should now be live! 🎉
