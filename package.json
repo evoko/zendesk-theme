@@ -22,5 +22,10 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "tabWidth": 2
+  }
 }
