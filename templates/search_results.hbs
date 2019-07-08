@@ -33,8 +33,8 @@
               {{#is url '#'}}
               <li title="{{name}}">{{name}}</li>
               {{else}}
-              {{!-- space between {{name}} is intentional to match {{breadcrumbs}} behavior --}}
-              <li title="{{name}}"><a href="{{url}}"> {{name}} </a></li>
+              {{!-- blank space around <a> tag is intentional to match {{breadcrumbs}} behavior --}}
+              <li title="{{name}}"> <a href="{{url}}">{{name}}</a> </li>
               {{/is}}
               {{/each}}
             </ol>
