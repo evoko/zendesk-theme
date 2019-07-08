@@ -17,6 +17,14 @@
       display: none;
     }
   }
+
+  &-header {
+    @include tablet {
+      padding-bottom: 0px;
+    }
+    padding-bottom: 8px;
+    border-bottom: 1px solid $border-color;
+  }
 }
 
 .section-list {
@@ -50,7 +58,7 @@
   padding: 15px;
   text-align: center;
 
-  &[aria-hidden="true"] {
+  &[aria-hidden='true'] {
     display: none;
   }
 }

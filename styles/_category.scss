@@ -35,6 +35,7 @@
     padding-bottom: 6px;
     font-size: 22px;
     font-weight: $font-weight-semibold;
+    border-bottom: 1px solid $border-color;
 
     a {
       color: $text_color;
@@ -46,7 +47,6 @@
   list-style: disc;
   padding: 0 20px;
   margin: 0px 0 16px 12px;
-  border-top: 1px solid $border_color;
 
   &-item {
     font-size: $font-size-bigger;
