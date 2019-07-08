@@ -26,7 +26,6 @@
   &-header {
     @include tablet {
       flex-direction: row;
-      margin-top: 0;
     }
 
     align-items: flex-start;
@@ -34,8 +33,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 40px;
-    margin-top: 20px;
+    margin-bottom: 16px;
   }
 
   &-avatar {
@@ -46,7 +44,15 @@
     margin-bottom: 10px;
   }
 
+  &-date {
+    font-size: $font-size-navigation;
+    color: $secondary-text-color;
+  }
+
   &-title {
+    margin-bottom: 8px;
+    font-weight: $font-weight-semibold;
+
     @include tablet {
       flex-basis: 100%; /* Take entire row */
     }
@@ -85,8 +91,8 @@
   }
 
   &-content {
-    line-height: 1.6;
-    margin: 40px 0;
+    line-height: 1.75;
+    margin: 16px 0;
     word-wrap: break-word;
   }
 
@@ -136,7 +142,7 @@
     border-top: 1px solid $border-color;
     display: flex;
     flex-direction: column;
-    padding: 20px 0;
+    padding: 16px 0;
 
     > * {
       flex: 1 0 50%; //Explicit values needed whith flex-direction: column for IE11
@@ -279,11 +285,6 @@
       border-radius: 0px;
     }
 
-    &-show-all {
-      text-decoration: underline !important;
-      background-color: rgba(lighten($brand-blue-color, 20%), 0.7) !important;
-    }
-
     &.current-article,
     &:hover,
     &:active,
@@ -291,13 +292,20 @@
       background-color: $secondary-shade;
       text-decoration: none;
     }
+
+    &-show-all {
+      background-color: rgba(lighten($brand-blue-color, 20%), 0.7) !important;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
 .recent-articles,
 .related-articles {
   h3 {
-    font-size: $font-size-base;
     margin: 20px 0;
   }
 

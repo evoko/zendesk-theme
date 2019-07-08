@@ -37,17 +37,35 @@
 }
 
 @mixin content-body {
+  h2,
+  h3,
+  h4 {
+    font-weight: $font-weight-semibold;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-size: 26px;
+    margin-top: 32px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-top: 24px;
+  }
+
   img {
     height: auto;
     max-width: 100%;
   }
 
-  ul, ol {
-    padding-left: 20px;
+  ul,
+  ol {
+    padding-left: 16px;
     list-style-position: outside;
-    margin: 20px 0 20px 20px;
+    margin: 16px 0 16px 16px;
 
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       padding-right: 20px;
       padding-left: 0;
       margin-left: 0;
@@ -56,7 +74,12 @@
   }
 
   // Sub level list
-  ul > ul, ol > ol, ol > ul, ul > ol, li > ul, li > ol {
+  ul > ul,
+  ol > ol,
+  ol > ul,
+  ul > ol,
+  li > ul,
+  li > ol {
     margin: 0;
   }
 
@@ -64,23 +87,35 @@
     list-style-type: disc;
   }
 
-  a:visited { color: $visited-link-color; }
-
-  code {
+  code,
+  pre {
     background: $primary-shade;
-    border: 1px solid $border-color;
-    border-radius: 3px;
-    padding: 0 5px;
-    margin: 0 2px;
+    font-family: $mono_font;
+    text-align: left;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    tab-size: 4;
+    hyphens: none;
   }
 
   pre {
-    background: $primary-shade;
+    position: relative; // for code copy button
     border: 1px solid $border-color;
-    border-radius: 3px;
-    padding: 10px 15px;
+    border-radius: $border-radius;
+    padding: 16px;
+    margin-bottom: 16px;
+    margin-top: 0px;
     overflow: auto;
-    white-space: pre;
+    line-height: 1.5;
+  }
+
+  :not(pre) > code {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    white-space: normal;
+    padding: 0 4px;
+    margin: 0 2px;
   }
 
   blockquote {
@@ -88,5 +123,51 @@
     color: $secondary-text-color;
     font-style: italic;
     padding: 0 15px;
+    margin: 0px;
+    margin-bottom: 16px;
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    border: 1px solid $border_color;
+    border-radius: $border-radius;
+    margin-bottom: 16px;
+    margin-top: 0px;
+
+    tr {
+      border-bottom: 1px solid $border_color;
+    }
+
+    tr {
+      background-color: $background_color;
+      border-bottom: 1px solid $border_color;
+    }
+
+    tr:nth-child(odd) {
+      background-color: $primary-shade;
+    }
+
+    tr:last-child {
+      border-bottom: none;
+    }
+
+    th {
+      text-align: center;
+      font-weight: $font-weight-semibold;
+      background-color: $background_color;
+    }
+
+    th,
+    td {
+      border-right: 1px solid $border_color;
+      padding: 6px 12px;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: none;
+    }
   }
 }

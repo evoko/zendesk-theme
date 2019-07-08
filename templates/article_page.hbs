@@ -35,7 +35,7 @@
 
     <article class="article">
       <header class="article-header">
-        <h1 title="{{article.title}}" class="article-title">
+        <h1 class="article-title" title="{{article.title}}">
           {{article.title}}
           {{#if article.internal}}
           <span class="icon-lock" title="{{t 'internal'}}"></span>
@@ -58,14 +58,10 @@
             {{/link}}
             {{/if}}
 
-            <ul class="meta-group">
-              {{#is article.created_at article.edited_at}}
-              <li class="meta-data">{{date article.created_at timeago=true}}</li>
-              {{else}}
-              <li class="meta-data">{{date article.edited_at timeago=true}}</li>
-              <li class="meta-data">{{t 'updated'}}</li>
-              {{/is}}
-            </ul>
+            <div class="article-date">
+              {{#if article.edited_at}}Last updated {{date article.edited_at timeago=true}}
+              {{else}}Published {{date article.created_at timeago=true}}{{/if}}
+            </div>
           </div>
         </div>
 
@@ -83,10 +79,7 @@
               {{#each attachments}}
               <li class="attachment-item">
                 <a href="{{url}}" target="_blank">{{name}}</a>
-                <div class="attachment-meta meta-group">
-                  <span class="attachment-meta-item meta-data">{{size}}</span>
-                  <a href="{{url}}" target="_blank" class="attachment-meta-item meta-data">Download</a>
-                </div>
+                <span class="attachment-meta-item meta-data">{{size}}</span>
               </li>
               {{/each}}
             </ul>
@@ -238,3 +231,15 @@
     </article>
   </div>
 </div>
+{{!-- Smooth scrolling --}}
+<script src="{{asset 'smooth-scroll.polyfills.min.js'}}"></script>
+<script>var scroll = new SmoothScroll('a[href*="#"]', { offset: 8, topOnEmptyHash: false, speed: 500, speedAsDuration: true });</script>
+{{!-- Code boxes syntax highlighting --}}
+<script src="{{asset 'prism.min.js'}}"></script>
+<script>Prism.plugins.customClass.prefix('prism-');</script>
+{{!-- Code boxes copy to clipboard button --}}
+<script src="{{asset 'clipboard.min.js'}}"></script>
+<script src="{{asset 'clipboard-button.min.js'}}"></script>
+{{!-- Anchor links --}}
+<script src="{{asset 'anchor.min.js'}}"></script>
+<script>anchors.options = { placement: 'right', icon: '#', class: 'anchor-links' }; anchors.add('.article-body h2, .article-body h3, .article-body h4');</script>

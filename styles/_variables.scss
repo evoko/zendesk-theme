@@ -12,14 +12,16 @@ $brand-yellow-color: #fbc337 !default;
 $brand-red-color: #e9495f !default;
 $brand-blue-color: #51c2e1 !default;
 
-$visited-link-color: zass-darken($link_color, 20%);
 $hover-button-color: zass-darken($brand_color, 20%);
-$secondary-text-color: zass-lighten($text_color, 20%);
+$secondary-text-color: lighten($text_color, 20%);
 
 $primary-shade: darken($background_color, 3%);
 $secondary-shade: darken($background_color, 5%);
 
 $border-color: #ddd;
+
+$field-text-color: #999;
+$field-text-focus-color: #555;
 
 $button-color: $brand_color;
 
@@ -47,9 +49,6 @@ $font-size-small: 13px;
 $font-size-navigation: 14px;
 $font-size-base: 16px;
 $font-size-bigger: 18px;
-
-$field-text-color: #999;
-$field-text-focus-color: #555;
 
 // ################################################
 // Common values

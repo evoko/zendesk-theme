@@ -1,4 +1,158 @@
 // shame - for styles that haven't yet found their place
+
+/* make ticket follow-up start on a new line in new request heading */
 .follow-up-hint {
   display: block;
+}
+
+/* anchor.js links for headings */
+.anchor-links {
+  padding-left: 0 !important;
+  margin-left: 0.2em !important;
+}
+
+/* prism.js */
+.prism {
+  &-comment,
+  &-prolog,
+  &-doctype,
+  &-cdata {
+    color: slategray;
+  }
+
+  &-punctuation {
+    color: #999;
+  }
+
+  &-namespace {
+    opacity: 0.7;
+  }
+
+  &-property,
+  &-tag,
+  &-boolean,
+  &-number,
+  &-constant,
+  &-symbol,
+  &-deleted {
+    color: #905;
+  }
+
+  &-selector,
+  &-attr-name,
+  &-string,
+  &-char,
+  &-builtin,
+  &-inserted {
+    color: #690;
+  }
+
+  &-operator,
+  &-entity,
+  &-url,
+  &-language-css &-string,
+  &-style &-string {
+    color: #9a6e3a;
+    // background: hsla(0, 0%, 100%, 0.5);
+  }
+
+  &-atrule,
+  &-attr-value,
+  &-keyword {
+    color: #07a;
+  }
+
+  &-function,
+  &-class-name {
+    color: #dd4a68;
+  }
+
+  &-regex,
+  &-important,
+  &-variable {
+    color: #e90;
+  }
+
+  &-important,
+  &-bold {
+    font-weight: bold;
+  }
+  &-italic {
+    font-style: italic;
+  }
+
+  &-entity {
+    cursor: help;
+  }
+}
+
+pre[class*='language-'].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+pre[class*='language-'].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 1px solid #999;
+  user-select: none;
+}
+
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
+
+/* copy code to clipboard button */
+.code-copy-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  cursor: pointer;
+  padding: 2px 4px;
+  background-color: transparent;
+  opacity: 0.4;
+  font-size: 80%;
+}
+
+.code-copy-button:hover,
+.code-copy-button:active {
+  opacity: 0.8;
+}
+
+.code-copy-button:focus {
+  outline: 0;
+}
+
+.code-copy-button::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding-right: 4px;
+  content: '\f328';
 }
