@@ -5,7 +5,7 @@
   input[type='search'] {
     border: 1px solid $border-color;
     box-sizing: border-box;
-    color: $field-text-color;
+    color: $secondary-text-color;
     height: 40px;
     padding-left: 40px;
     padding-right: 20px;
@@ -20,15 +20,16 @@
     }
 
     &:focus {
-      color: $field-text-focus-color;
+      color: $text_color;
       background-color: #fff;
+      border: 1px solid $input-focus-color;
     }
   }
 
   &::before {
     @extend .icon;
     @include vertical-align;
-    color: #777;
+    color: $secondary-text-color;
     content: '\1F50D';
     font-size: 18px;
     position: absolute;
@@ -51,6 +52,7 @@
     &:focus {
       box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.28), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
         0 1px 5px 0 rgba(0, 0, 0, 0.2);
+      border: none;
     }
   }
 

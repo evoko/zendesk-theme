@@ -11,17 +11,15 @@ $background_color: #fff !default;
 $brand-yellow-color: #fbc337 !default;
 $brand-red-color: #e9495f !default;
 $brand-blue-color: #51c2e1 !default;
+$border-color: #ddd !default;
 
-$hover-button-color: zass-darken($brand_color, 20%);
+$hover-button-color: darken($brand_color, 10%);
 $secondary-text-color: lighten($text_color, 20%);
 
 $primary-shade: darken($background_color, 3%);
 $secondary-shade: darken($background_color, 5%);
 
-$border-color: #ddd;
-
-$field-text-color: #999;
-$field-text-focus-color: #555;
+$input-focus-color: #999;
 
 $button-color: $brand_color;
 

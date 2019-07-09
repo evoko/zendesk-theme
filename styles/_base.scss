@@ -91,11 +91,11 @@ select {
   border-radius: 4px;
   padding: 8px 30px 8px 10px;
   outline: none;
-  color: $field-text-focus-color;
+  color: $secondary-text-color;
   width: 100%;
 
   &:focus {
-    border: 1px solid $brand_color;
+    border: 1px solid $input-focus-color;
   }
 
   &::-ms-expand {
@@ -112,7 +112,7 @@ textarea {
   padding: 10px;
 
   &:focus {
-    border: 1px solid $brand_color;
+    border: 1px solid $input-focus-color;
   }
 }
 

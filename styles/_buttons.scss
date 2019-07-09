@@ -1,10 +1,13 @@
 /***** Buttons *****/
-.button, [role="button"] {
-  @include tablet { width: auto; }
-
-  border: 1px solid $button-color;
-  border-radius: 4px;
-  color: $button-color;
+.button,
+[role='button'] {
+  @include tablet {
+    width: auto;
+  }
+  // TODO: Look into styles for smaller buttons
+  border: 1px solid $brand-color;
+  border-radius: $border-radius;
+  color: $brand_color;
   cursor: pointer;
   display: inline-block;
   font-size: 12px;
@@ -12,7 +15,8 @@
   margin: 0;
   padding: 0 20px;
   text-align: center;
-  transition: background-color .12s ease-in-out, border-color .12s ease-in-out, color .15s ease-in-out;
+  transition: background-color 0.12s ease-in-out, border-color 0.12s ease-in-out,
+    color 0.15s ease-in-out;
   user-select: none;
   white-space: nowrap;
   width: 100%;
@@ -25,13 +29,13 @@
   &:hover,
   &:active,
   &:focus,
-  &[aria-selected="true"] {
+  &[aria-selected='true'] {
     background-color: $brand_color;
     color: $brand_text_color;
     text-decoration: none;
   }
 
-  &[aria-selected="true"] {
+  &[aria-selected='true'] {
     &:hover,
     &:focus,
     &:active {
@@ -41,48 +45,53 @@
   }
 
   &[data-disabled] {
-    cursor: default;
+    cursor: not-allowed;
   }
 }
 
-.button-large, input[type="submit"] {
+.button-large,
+input[type='submit'] {
   @include tablet {
     width: auto;
   }
 
-  background-color: $button-color;
-  border: 0;
-  border-radius: 4px;
-  color: $brand_text_color;
-  font-size: 14px;
-  font-weight: $font-weight-base;
+  background-color: lighten($brand_color, 25%);
+  border: 1px solid;
+  border-color: $brand_color;
+  border-radius: $border-radius;
+  color: $text-color;
+  font-size: $font-size-navigation;
+  font-weight: $font-weight-semibold;
   line-height: 2.72;
   min-width: 190px;
   padding: 0 1.9286em;
   width: 100%;
+  transition: background-color 0.12s ease-in-out, border-color 0.12s ease-in-out,
+    color 0.15s ease-in-out;
 
   &:hover,
   &:active,
   &:focus {
-    background-color: $hover-button-color;
+    background-color: lighten($brand_color, 15%);
+    color: $text_color;
   }
 
-
   &[disabled] {
-    background-color: #ddd;
+    background-color: $border-color;
+    border-color: $border-color;
+    color: $secondary-text-color;
   }
 }
 
 .button-secondary {
-  color: $secondary-text-color;
-  border: 1px solid $border-color;
+  color: $text-color;
+  border-color: $border-color;
   background-color: transparent;
 
   &:hover,
   &:focus,
   &:active {
-    color: $text_color;
-    border: 1px solid $border-color;
-    background-color: $primary-shade;
+    border-color: $border-color;
+    background-color: $secondary-shade;
   }
 }
