@@ -68,11 +68,16 @@
               {{#is url '#'}}
               <li title="{{name}}">{{name}}</li>
               {{else}}
-              {{!-- space between {{name}} is intentional to match {{breadcrumbs}} behavior --}}
-              <li title="{{name}}"><a href="{{url}}"> {{name}} </a></li>
+              {{!-- blank space around <a> tag is intentional to match {{breadcrumbs}} behavior --}}
+              <li title="{{name}}"> <a href="{{url}}">{{name}}</a> </li>
               {{/is}}
               {{/each}}
             </ol>
+          </li>
+          <li class="meta-data">
+            {{#link 'user_profile' id=author.id}}
+            {{author.name}}
+            {{/link}}
           </li>
           <li class="meta-data">
             {{#if edited_at}}Updated {{date edited_at timeago=true}}
