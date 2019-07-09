@@ -11,9 +11,9 @@ When importing a theme to Zendesk Guide it will mainly look for the following fi
 - [`templates/`](#templates) - contains all markup.
 - [`Style.css`](#styles) - contains all CSS.
 - [`script.js`](#scripts) - main script file that will be included in the page `<head>`.
+- [`assets/`](#assets-folder) - assets such as scripts or images.
 - [`manifest.json`](#manifest-file) - project metadata and settings.
 - [`settings/`](#settings-folder) - files to be used in settings in [`manifest.json`](manifest.json).
-- [`assets/`](#assets-folder) - assets such as scripts or images.
 
 Other files and folders can be added to the project but will (to my knowledge) be ignored when importing.
 
@@ -107,7 +107,7 @@ And this would look for a file inside the [`settings/`](settings/) folder named 
 
 ## Developing
 
-To start working, clone the repository (`git clone https://github.com/rottbers/zendesk-theme.git`) and create a feature/bug branch (e.g. `git checkout -b feature/that-new-feature` or `bug/fixing-that-bug`).
+To start contributing, clone the repository (`git clone https://github.com/rottbers/zendesk-theme.git`) and create a feature/bug branch (e.g. `git checkout -b feature/that-new-feature` or `bug/fix-for-that-bug`) to work on.
 
 ### Local previewing
 
@@ -146,7 +146,7 @@ npm run styles:build
 For deploying changes to production we use the [Zendesk GitHub integration](https://support.zendesk.com/hc/en-us/community/posts/360004400007), the workflow can be summarized to:
 
 1. Increment the `version` in [`manifest.json`](manifest.json) (without this Zendesk won't recognize an update).
-2. Commit and merge your branch(es) to the master branch.
+2. Commit your changes and merge your branch to the master branch.
 3. In the [Zendesk Guide theming center](https://support.evoko.se/theming) press **Update from GitHub**.
 4. Changes should now be live! 🎉
 
