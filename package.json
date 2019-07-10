@@ -1,9 +1,9 @@
 {
   "name": "evoko-zendesk-theme",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "description": "Evoko theme for Zendesk Guide",
   "homepage": "https://support.evoko.se/hc/en-us",
-  "repository": "github:rottbers/zendesk-theme",
+  "repository": "github:evoko/zendesk-theme",
   "license": "Apache-2.0",
   "scripts": {
     "preview": "zat theme preview",

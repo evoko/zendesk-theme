@@ -107,7 +107,7 @@ And this would look for a file inside the [`settings/`](settings/) folder named 
 
 ## Developing
 
-To start contributing, clone the repository (`git clone https://github.com/rottbers/zendesk-theme.git`) and create a feature/bug branch (e.g. `git checkout -b feature/that-new-feature` or `bug/fix-for-that-bug`) to work on.
+To start contributing, clone the repository (`git clone https://github.com/evoko/zendesk-theme.git`) and create a feature/bug branch (e.g. `git checkout -b feature/that-new-feature` or `bug/fix-for-that-bug`) to work on.
 
 ### Local previewing
 
