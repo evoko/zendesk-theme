@@ -1,6 +1,6 @@
 {
   "name": "evoko-zendesk-theme",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Evoko theme for Zendesk Guide",
   "homepage": "https://support.evoko.se/hc/en-us",
   "repository": "github:evoko/zendesk-theme",
@@ -16,7 +16,7 @@
   "devDependencies": {
     "autoprefixer": "^9.6.0",
     "browserslist": "^4.6.3",
-    "postcss-cli": "^6.1.2",
+    "postcss-cli": "^6.1.3",
     "prettier": "^1.18.2",
     "sass": "^1.22.2"
   },
