@@ -128,8 +128,8 @@
   }
 
   table {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    max-width: 100%;
     overflow: auto;
     border: 1px solid $border_color;
     border-radius: $border-radius;
