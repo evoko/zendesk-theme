@@ -16,16 +16,7 @@
     <section class="section-content">
       <header class="section-header page-header">
         <h1>
-          {{#is section.name 'Getting started!'}}
-          <i class="fas fa-rocket" style="color:#74BF95;"></i>
-          {{/is}}
           {{#is section.name 'Getting started'}}
-          <i class=" fas fa-rocket" style="color:#74BF95;"></i>
-          {{/is}}
-          {{#is section.name 'Getting started v1.x'}}
-          <i class=" fas fa-rocket" style="color:#74BF95;"></i>
-          {{/is}}
-          {{#is section.name 'Getting started v2.x'}}
           <i class=" fas fa-rocket" style="color:#74BF95;"></i>
           {{/is}}
           {{#is section.name 'Frequently asked questions'}}
@@ -42,9 +33,6 @@
           {{/is}}
           {{#is section.name 'Beta features'}}
           <i class=" fas fa-flask" style="color:#74BF95;"></i>
-          {{/is}}
-          {{#is section.name 'Evoko Home API'}}
-          <i class=" fas fa-file-code fa-2x" style="color:#74BF95;"></i>
           {{/is}}
           {{section.name}}
         </h1>
