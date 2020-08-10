@@ -1,7 +1,7 @@
 {
-  "name": "Evoko theme",
-  "author": "Evoko Unlimited AB",
-  "version": "2.0.2",
+  "name": "All of the House theme",
+  "author": "All of the House, Erik Cochran",
+  "version": "2.0.3",
   "api_version": 1,
   "default_locale": "en-us",
   "settings": [
@@ -13,7 +13,7 @@
           "type": "color",
           "description": "brand_color_description",
           "label": "brand_color_label",
-          "value": "#0072EF"
+          "value": "#ed1969"
         },
         {
           "identifier": "brand_text_color",
@@ -34,7 +34,7 @@
           "type": "color",
           "description": "link_color_description",
           "label": "link_color_label",
-          "value": "#0072EF"
+          "value": "#ed1969"
         },
         {
           "identifier": "background_color",
