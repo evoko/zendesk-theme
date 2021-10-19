@@ -1,10 +1,62 @@
 /***** Base *****/
+@font-face {
+  font-family: 'Roobert';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url($assets-roobert-light-woff2) format('woff2'),
+    url($assets-roobert-light-woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'Roobert';
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  src: url($assets-roobert-light-italic-woff2) format('woff2'),
+    url($assets-roobert-light-italic-woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'Roobert';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url($assets-roobert-semibold-woff2) format('woff2'),
+    url($assets-roobert-semibold-woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url($assets-ibm-plex-mono-light-woff2) format('woff2'),
+    url($assets-ibm-plex-mono-light-woff) format('woff');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url($assets-ibm-plex-mono-bold-woff2) format('woff2'),
+    url($assets-ibm-plex-mono-bold-woff) format('woff');
+}
+
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: $background_color;
+  // background-color: $background_color;
+  background-color: lighten($background_color, 10%);
+  background-image: linear-gradient(
+    350deg,
+    $brand-color -300%,
+    lighten($background_color, 10%) 40%
+  );
   color: $text_color;
   font-family: $text_font;
   font-size: $font-size-base;
@@ -13,9 +65,7 @@ body {
   -webkit-font-smoothing: antialiased;
 
   > main {
-    @include desktop {
-      min-height: 65vh;
-    }
+    min-height: calc(100vh - $header-height);
   }
 }
 
@@ -60,10 +110,18 @@ strong {
   font-weight: $font-weight-semibold;
 }
 
+::selection {
+  background-color: $brand-color;
+  color: $background_color;
+}
+
 input,
-textarea {
+textarea,
+select {
   color: $text_color;
   font-size: $font-size-base;
+  background-color: transparent;
+  font-family: $text_font;
 }
 
 input {
@@ -85,7 +143,8 @@ input[disabled] {
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: url($assets-dropdown-arrow-svg) no-repeat #fff;
+  background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23CCC' d='M0 0h10L5 6 0 0z'/%3E%3C/svg%3E%0A")
+    no-repeat;
   background-position: right 10px center;
   border: 1px solid $border-color;
   border-radius: 4px;
@@ -98,14 +157,15 @@ select {
     border: 1px solid $input-focus-color;
   }
 
-  &::-ms-expand {
-    display: none;
+  option {
+    background-color: $primary-shade;
+    color: $text-color;
   }
 }
 
 textarea {
   border: 1px solid $border-color;
-  border-radius: 2px;
+  border-radius: $border-radius;
   resize: vertical;
   width: 100%;
   outline: none;
@@ -118,6 +178,11 @@ textarea {
 
 .container {
   @include max-width-container;
+
+  &-spacing {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
 }
 
 .container-divider {
@@ -131,12 +196,11 @@ ul {
 }
 
 .error-page {
-  @include max-width-container;
-  min-height: 65vh;
-
   &-heading {
     font-size: 38px;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
 
     @media (min-width: $tablet-width) {
       font-size: 48px;
@@ -148,6 +212,10 @@ ul {
   }
 }
 
+.visibility-hidden {
+  @include visually-hidden;
+}
+
 .dropdown-toggle {
   background: none;
   border: 0;
@@ -155,7 +223,6 @@ ul {
   text-align: initial;
 }
 .dropdown-toggle:focus {
-  outline: 0;
   text-decoration: underline;
 }
 

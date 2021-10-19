@@ -2,24 +2,21 @@
 .my-activities {
   &-nav {
     background-color: $secondary-shade;
-    border: 0;
-    margin-bottom: 20px;
   }
 
   &-sub-nav {
-    @include tablet {
-      li:hover { border-bottom: 4px solid #ddd; }
-    }
-
-    background-color: transparent;
-    border-bottom: 1px solid $border-color;
     margin-bottom: 30px;
+  }
 
-    li[aria-selected="true"] { border-color: $brand_color; }
+  &-header {
+    h1 {
+      font-weight: $font-weight-semibold;
+    }
   }
 
   &-table {
-    .striped-list-title { /* My activities tables */
+    .striped-list-title {
+      /* My activities tables */
       @include desktop {
         margin-bottom: 0;
         max-width: 500px;
@@ -36,13 +33,17 @@
     }
 
     thead {
-      @include tablet { display: table-header-group; }
+      @include tablet {
+        display: table-header-group;
+      }
       display: none;
     }
 
     th:first-child,
     td:first-child {
-      @include desktop { width: 500px; }
+      @include desktop {
+        width: 500px;
+      }
       padding-left: 0;
     }
 
@@ -53,7 +54,9 @@
 
     // On mobile, only show the first column
     td:not(:first-child) {
-      @include tablet { display: table-cell; }
+      @include tablet {
+        display: table-cell;
+      }
 
       display: none;
     }
@@ -91,7 +94,9 @@
     .request-filter {
       @include tablet {
         margin: 0 0 0 30px;
-        [dir="rtl"] & { margin: 0 30px 0 0; }
+        [dir='rtl'] & {
+          margin: 0 30px 0 0;
+        }
       }
 
       display: block;
@@ -118,28 +123,30 @@
       width: 100%;
     }
 
-    .organization-subscribe,
-    .organization-unsubscribe {
+    .organization-subscribe {
       @include tablet {
         margin-left: 10px;
-        [dir="rtl"] & { margin: 0 10px 0 0; }
+        [dir='rtl'] & {
+          margin: 0 10px 0 0;
+        }
       }
 
-      line-height: 40px;
-      max-height: 40px;
-      padding: 0 20px;
-    }
-
-    .organization-unsubscribe {
-      background-color: $button-color;
-      color: $brand_text_color;
+      button {
+        @extend .button;
+        line-height: 40px;
+        max-height: 40px;
+        padding: 0 20px;
+        &[data-selected='true'] {
+          @extend .button-primary;
+        }
+      }
     }
 
     & + .requests-search-info {
       margin-top: 15px;
 
       &.meta-data::after {
-        content: "";
+        content: '';
         margin: 0;
       }
 
@@ -163,7 +170,9 @@
     }
 
     thead {
-      @include tablet { display: table-header-group; }
+      @include tablet {
+        display: table-header-group;
+      }
       display: none;
     }
 
@@ -192,28 +201,21 @@
 
 /* Following table */
 .subscriptions {
-  &-unsubscribe a {
-    @include tablet { width: auto; }
-
-    background: $button-color;
-    border-radius: 4px;
-    color: $brand_text_color;
-    display: inline-block;
-    font-size: 12px;
-    line-height: 2.34; //Taken from Zendesk garden bedrock
-    padding: 0 20px;
-    text-align: center;
-    width: 100%;
-
-    &:hover {
-      background-color: $hover-button-color;
-      text-decoration: none;
+  &-subscribe button {
+    @include tablet {
+      width: auto;
+    }
+    @extend .button;
+    &[data-selected='true'] {
+      @extend .button-primary;
     }
   }
 
   &-table {
     td:last-child {
-      @include tablet { display: table-cell; }
+      @include tablet {
+        display: table-cell;
+      }
       display: block;
     }
 
@@ -244,8 +246,9 @@
 
     color: $secondary-text-color;
     font-size: $font-size-small;
-    font-weight: $font-weight-light;
   }
 }
 
-.no-activities { color: $secondary-text-color; }
+.no-activities {
+  color: $secondary-text-color;
+}

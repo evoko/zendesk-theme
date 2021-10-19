@@ -1,35 +1,20 @@
-<section class="section hero hero-small">
-  <header class="hero-inner">
-    <div class="hero-inner-search">
-      {{search submit=false scoped=settings.scoped_kb_search class="search search-full" placeholder="Search knowledge base..."}}
-    </div>
-  </header>
-</section>
-
-<div class="container">
-
-  <nav class="sub-nav">
-    {{breadcrumbs}}
-  </nav>
+<div class="container container-spacing">
+  <nav class="sub-nav">{{breadcrumbs}}</nav>
 
   <div class="section-container">
-    <section class="section-content">
-      <header class="section-header page-header">
-        <h1>
-          {{#is section.name 'Getting started'}}
-          <i class=" fas fa-rocket" style="color:#74BF95;"></i>
-          {{/is}}
-          {{section.name}}
-        </h1>
+    <section id="main-content" class="section-content">
+      <header class="page-header">
+        <h1>{{section.name}}</h1>
         {{#if settings.show_follow_section}}
-        {{subscribe}}
+        <div class="section-subscribe">{{subscribe}}</div>
         {{/if}}
         {{#if section.description}}
         <p class="page-header-description">{{section.description}}</p>
         {{/if}}
       </header>
+
       {{#if section.sections}}
-      <ul class="section-list section-list--collapsed">
+      <ul class="section-list">
         {{#each section.sections}}
         <li class="section-list-item">
           <a href="{{url}}">
@@ -42,22 +27,29 @@
           </a>
         </li>
         {{/each}}
-        <a tabindex="0" class="see-all-sections-trigger" aria-hidden="true" id="see-all-sections-trigger"
-          title="{{t 'see_all_sections'}}">{{t 'see_all_sections'}}</a>
       </ul>
       {{/if}}
 
+      {{pagination "section.sections"}}
 
       {{#if section.articles}}
       <ul class="article-list">
         {{#each section.articles}}
         <li class="article-list-item {{#if promoted}} article-promoted{{/if}}">
           {{#if promoted}}
-          <span data-title="{{t 'promoted'}}" class="icon-star"></span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 12 12"
+            class="icon-star" title="{{t 'promoted'}}">
+            <path fill="currentColor"
+              d="M2.88 11.73c-.19 0-.39-.06-.55-.18a.938.938 0 01-.37-1.01l.8-3L.35 5.57a.938.938 0 01-.3-1.03c.12-.37.45-.63.85-.65L4 3.73 5.12.83c.14-.37.49-.61.88-.61s.74.24.88.6L8 3.73l3.11.17a.946.946 0 01.55 1.68L9.24 7.53l.8 3a.95.95 0 01-1.43 1.04L6 9.88l-2.61 1.69c-.16.1-.34.16-.51.16z" />
+          </svg>
           {{/if}}
           <a href="{{url}}" class="article-list-link">{{title}}</a>
           {{#if internal}}
-          <span class="icon-lock" title="{{t 'internal'}}"></span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16"
+            class="icon-lock" title="{{t 'internal'}}">
+            <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1" />
+            <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5" />
+          </svg>
           {{/if}}
         </li>
         {{/each}}
@@ -68,17 +60,8 @@
       </i>
       {{/if}}
 
-      {{pagination}}
+      {{pagination "section.articles"}}
 
     </section>
   </div>
 </div>
-
-{{!-- get category name and add to search bar placeholder --}}
-{{#if settings.scoped_kb_search}}
-<script>
-  var breadcrumbs = document.getElementsByClassName("breadcrumbs");
-  var categoryName = breadcrumbs[0].children[1].title;
-  document.getElementById("query").placeholder = "Search " + categoryName + "...";
-</script>
-{{/if}}

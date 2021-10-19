@@ -1,12 +1,10 @@
 /***** Vote *****/
 /* Used in article comments, post comments and post */
 .vote {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  width: 35px;
   a {
-    outline: none;
-
     &:active,
     &:hover,
     &:focus {
@@ -20,35 +18,41 @@
   display: block;
   margin: 3px 0;
 
-  [dir="rtl"] & {
+  [dir='rtl'] & {
     direction: ltr;
     unicode-bidi: bidi-override;
   }
 }
 
-.vote-up:hover::before,
-.vote-down:hover::before {
+.vote-up svg {
+  transform: scale(1, -1);
+}
+
+.vote-up:hover,
+.vote-down:hover {
   color: $brand_color;
 }
 
-.vote-up::before, .vote-down::before {
-  @extend .icon;
+.vote-up,
+.vote-down {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
   color: $secondary-text-color;
-  font-size: 24px;
+  cursor: pointer;
+  min-height: 35px;
+  min-width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.vote-up::before {
-  content: "\2B06";
-}
-
-.vote-down::before {
-  content: "\2B07";
-}
-
-.vote-voted::before {
+.vote-voted {
   color: $brand_color;
 }
 
-.vote-voted:hover::before {
+.vote-voted:hover {
   color: $hover-button-color;
 }

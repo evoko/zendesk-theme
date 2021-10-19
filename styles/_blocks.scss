@@ -1,42 +1,38 @@
 /***** Blocks *****/
 /* Used in Homepage#categories and Community#topics */
 .blocks {
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
-
   &-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    display: grid;
+    grid-auto-rows: auto;
+    gap: 30px;
     list-style: none;
     padding: 0;
+
+    @include tablet {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 
   &-item {
+    border: 1px solid $brand_color;
     border-radius: $border-radius;
-    box-sizing: border-box;
-    color: $brand_text_color;
-    background-color: $brand_color;
-    display: flex;
-    flex: 1 0 200px;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 15px 30px;
-    padding: 5px 10px;
-    max-width: 100%;
+    color: $brand_color;
+    min-height: 120px;
     text-align: center;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
-      0 1px 5px 0 rgba(0, 0, 0, 0.2);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    align-items: flex-end;
 
     &:hover,
     &:focus,
     &:active {
-      box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.28), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
-        0 1px 5px 0 rgba(0, 0, 0, 0.2);
+      background-color: $brand_color;
 
       * {
+        color: $brand_text_color;
         text-decoration: none;
       }
     }
@@ -45,9 +41,9 @@
       background-color: transparent;
       border: 1px solid $border-color;
 
-      .icon-lock::before {
-        content: '\1F512';
-        font-size: 15px;
+      .icon-lock {
+        height: 15px;
+        width: 15px;
         bottom: 5px;
         position: relative;
       }
@@ -59,23 +55,35 @@
   }
 
   &-item-link {
-    color: $brand_color;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    border-radius: inherit;
+    height: 100%;
+    width: 100%;
 
     &:hover,
-    &:focus,
     &:active {
+      text-decoration: none;
+    }
+
+    &:focus {
+      background-color: $brand_color;
+      color: $brand_text_color;
+      outline: none;
       text-decoration: none;
     }
   }
 
   &-item-title {
     margin-bottom: 0;
-    font-weight: $font-weight-light;
-    color: $brand_text_color;
+    font-size: 20px;
+    font-weight: $font-weight-semibold;
   }
 
   &-item-description {
-    font-weight: $font-weight-light;
     margin: 0;
   }
 

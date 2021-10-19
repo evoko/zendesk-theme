@@ -2,28 +2,17 @@
 .section {
   &-container {
     display: flex;
-    justify-content: flex-end;
   }
 
   &-content {
-    @include desktop {
-      flex: 0 0 80%;
-    }
     flex: 1;
   }
 
-  &-subscribe {
-    .dropdown-toggle::after {
-      display: none;
+  &-subscribe button {
+    @extend .button;
+    &[data-selected='true'] {
+      @extend .button-primary;
     }
-  }
-
-  &-header {
-    @include tablet {
-      padding-bottom: 0px;
-    }
-    padding-bottom: 8px;
-    border-bottom: 1px solid $border-color;
   }
 }
 

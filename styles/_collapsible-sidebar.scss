@@ -2,45 +2,80 @@
 .collapsible-sidebar {
   @include desktop {
     max-height: none;
-    border-radius: $border-radius;
-    border: 1px solid $border_color;
-    padding: 0px;
+    padding: 0;
   }
-
   flex: 1;
   max-height: 45px;
   overflow: hidden;
   padding: 10px 0;
   position: relative;
 
-  &[aria-expanded='true'] {
-    max-height: none;
+  &-title {
+    margin-top: 0;
+    font-size: $font-size-base;
 
-    .collapsible-sidebar-title::after {
-      @include desktop {
-        display: none;
-      }
-      content: '\2715';
+    @include desktop {
+      margin: 16px 0 0;
+      font-size: $font-size-bigger;
+      font-weight: $font-weight-semibold;
     }
   }
 
-  &-title {
-    margin-top: 0;
+  &-toggle {
+    @include desktop {
+      display: none;
+    }
+    position: absolute;
+    top: calc(45px / 2);
+    transform: translateY(-50%);
+    right: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: $text-color;
 
-    &::after {
-      @extend .icon;
-      @include desktop {
-        display: none;
-      }
-      @include vertical-align;
-      content: '\25BE';
-      position: absolute;
-      right: 10px;
+    [dir='rtl'] & {
+      left: 0;
+      right: auto;
+    }
 
-      [dir='rtl'] & {
-        left: 10px;
-        right: auto;
+    &-icon {
+      display: none;
+    }
+
+    &[aria-expanded='false'] {
+      .chevron-icon {
+        display: inline-block;
       }
+    }
+
+    &[aria-expanded='true'] {
+      .x-icon {
+        display: inline-block;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $brand_color;
+    }
+  }
+
+  &-body {
+    @include desktop {
+      display: block;
+    }
+    display: none;
+  }
+
+  &[aria-expanded='true'] {
+    max-height: none;
+
+    .collapsible-sidebar-body {
+      display: block;
     }
   }
 }

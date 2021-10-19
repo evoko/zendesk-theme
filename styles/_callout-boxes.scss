@@ -34,7 +34,7 @@
 .note,
 .callout-note {
   border-color: $brand-yellow-color;
-  background-color: lighten($brand-yellow-color, 35%);
+  background-color: rgba($brand-yellow-color, 0.2);
 }
 
 .note::before,
@@ -46,7 +46,7 @@
 .success,
 .callout-success {
   border-color: $brand_color;
-  background-color: lighten($brand_color, 35%);
+  background-color: rgba($brand_color, 0.1);
 }
 
 .success::before,
@@ -58,7 +58,7 @@
 .important,
 .callout-important {
   border-color: $brand-red-color;
-  background-color: lighten($brand-red-color, 35%);
+  background-color: rgba($brand-red-color, 0.1);
 }
 
 .important::before,
@@ -70,7 +70,7 @@
 .tip,
 .callout-tip {
   border-color: $brand-blue-color;
-  background-color: lighten($brand-blue-color, 35%);
+  background-color: rgba($brand-blue-color, 0.1);
 }
 
 .tip::before,

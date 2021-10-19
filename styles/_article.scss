@@ -7,9 +7,9 @@
   */
   @include desktop {
     flex: 1 0 66%;
-    max-width: 800px;
+    max-width: $column-width;
     min-width: 640px;
-    padding: 0 40px;
+    margin: 0 40px;
   }
 
   flex: 1 0 auto; //Explicit values needed whith flex-direction: column for IE11
@@ -46,7 +46,7 @@
 
   &-date {
     font-size: $font-size-navigation;
-    color: $secondary-text-color;
+    color: $brand-grey02-color;
   }
 
   &-title {
@@ -57,9 +57,7 @@
       flex-basis: 100%; /* Take entire row */
     }
 
-    .icon-lock::before {
-      content: '\1F512';
-      font-size: 20px;
+    .icon-lock {
       position: relative;
       left: -5px;
       vertical-align: baseline;
@@ -94,6 +92,7 @@
     line-height: 1.75;
     margin: 16px 0px 32px 0px;
     word-wrap: break-word;
+    color: $secondary-text-color;
   }
 
   &-attachments {
@@ -115,12 +114,11 @@
       text-decoration: none;
     }
 
-    .icon-comments {
+    &-icon {
+      vertical-align: middle;
       color: $brand_color;
-      content: '\1F4AC';
-      display: inline-block;
-      font-size: 18px;
-      padding: 5px;
+      width: 18px;
+      height: 18px;
     }
   }
 
@@ -168,60 +166,22 @@
     border-top: 1px solid $border-color;
     padding: 30px 0;
     text-align: center;
+
+    &-count {
+      color: $brand-grey02-color;
+    }
   }
 
   &-vote {
-    background: transparent;
-    border: 1px solid $brand_color;
-    color: $brand_color;
     margin: 10px 5px;
     min-width: 90px;
     width: auto;
-
-    &::before {
-      @extend .icon;
-      font-size: 8px;
-      margin-right: 10px;
-
-      [dir='rtl'] & {
-        margin-right: 0;
-        margin-left: 10px;
-      }
-    }
-
-    &::after {
-      content: attr(title); /* Yes/No label*/
-    }
-
-    &:focus,
-    &:active {
-      background-color: transparent;
-      color: $brand_color;
-    }
-
-    &:hover {
-      background-color: $brand_color;
-    }
-
-    &:hover::before,
-    &:hover::after,
-    &[aria-selected='true']::before,
-    &[aria-selected='true']::after {
-      color: $brand_text_color;
-    }
-  }
-
-  &-vote-up::before {
-    content: '\2713';
-  }
-
-  &-vote-down::before {
-    content: '\2715';
   }
 
   &-more-questions {
     margin: 0px 0px 20px;
     text-align: center;
+    color: $secondary-text-color;
   }
 
   &-return-to-top {
@@ -242,42 +202,38 @@
       }
     }
 
-    .icon-arrow-up::before {
-      font-size: 16px;
-      margin-left: 5px;
-
-      [dir='rtl'] & {
-        margin-right: 10px;
-      }
+    &-icon {
+      transform: rotate(0.5turn);
     }
   }
 
-  &-unsubscribe {
-    background-color: $button-color;
-    color: $brand_text_color;
-    text-decoration: none;
-
-    &:hover {
-      background-color: $hover-button-color;
-      border-color: $hover-button-color;
+  &-subscribe button {
+    @extend .button;
+    &[data-selected='true'] {
+      @extend .button-primary;
     }
   }
 }
 
 .sidenav {
+  @include desktop {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+  }
+
   &-title {
     font-size: $font-size-base;
     position: relative;
 
     @include desktop {
       text-align: center;
-      padding-top: 16px;
+      padding-bottom: 16px;
     }
   }
 
   &-item {
-    border-radius: 4px;
-    color: $text_color;
+    border-radius: $border-radius;
+    color: $secondary-text-color;
     display: block;
     margin-bottom: 10px;
     padding: 12px 10px;
@@ -295,13 +251,17 @@
     &:focus {
       background-color: $secondary-shade;
       text-decoration: none;
+      color: $text_color;
     }
 
     &-show-all {
-      background-color: rgba(lighten($brand-blue-color, 20%), 0.7) !important;
+      color: $brand_color;
 
-      &:hover {
-        text-decoration: underline;
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $brand_color;
+        color: $brand_text_color;
       }
     }
   }

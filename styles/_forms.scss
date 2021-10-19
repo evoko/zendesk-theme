@@ -1,27 +1,21 @@
 /***** Forms *****/
-
 .form {
-  max-width: 870px;
+  max-width: $column-width;
   margin: 0 auto;
-  min-height: 55vh;
 
   &-header {
-    margin-bottom: 40px;
-    text-align: center;
+    margin-bottom: 30px;
 
     &-heading {
-      background-color: rgba(lighten($brand-blue-color, 20%), 0.7);
-      margin: 0 auto;
-      width: -moz-fit-content;
-      width: fit-content;
-      padding: 0 5%;
       font-weight: $font-weight-semibold;
+      margin: 0;
 
       @media (min-width: $tablet-width) {
         font-size: 48px;
       }
     }
     &-description {
+      color: $secondary-text-color;
     }
   }
 }
@@ -32,27 +26,26 @@
 
 .form-field label {
   display: block;
-  font-size: $font-size-base;
   margin-bottom: 5px;
 }
 
 .form-field input {
   border: 1px solid $border-color;
-  border-radius: $border-radius;
+  border-radius: 4px;
   padding: 10px;
   width: 100%;
 
   &:focus {
-    border: 1px solid $input-focus-color;
+    border: 1px solid $brand_color;
   }
 }
 
 .form-field input[type='text'] {
   border: 1px solid $border-color;
-  border-radius: $border-radius;
+  border-radius: 4px;
 
   &:focus {
-    border: 1px solid $input-focus-color;
+    border: 1px solid $brand_color;
   }
 }
 
@@ -62,21 +55,24 @@
 
 // Select box
 .form-field .nesty-input {
+  border: 1px solid $border-color;
   border-radius: $border-radius;
   height: 40px;
   line-height: 40px;
   outline: none;
   vertical-align: middle;
+  background-color: transparent;
+  color: $text-color;
 
   &:focus {
-    border: 1px solid $input-focus-color;
+    border: 1px solid $brand_color;
     text-decoration: none;
   }
 }
 
 .form-field .hc-multiselect-toggle:focus {
   outline: none;
-  border: 1px solid $input-focus-color;
+  border: 1px solid $brand_color;
   text-decoration: none;
 }
 
@@ -86,12 +82,6 @@
 
 .form-field input[type='checkbox'] + label {
   margin: 0 0 0 10px;
-}
-
-.form-field.required > label::after {
-  content: '*';
-  color: #f00;
-  margin-left: 2px;
 }
 
 .form-field .optional {
@@ -105,14 +95,7 @@
   margin: 5px 0;
 }
 
-[data-loading='true'] input,
-[data-loading='true'] textarea {
-  background: transparent url($assets-loader-gif) 99% 50% no-repeat;
-  background-size: 16px 16px;
-}
-
 .form footer {
-  margin-top: 40px;
   padding-top: 30px;
 }
 
@@ -134,5 +117,33 @@
 
   li {
     padding: 10px 0;
+  }
+}
+
+.form ul[data-hc-pills-container] {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background: transparent;
+
+  &[data-hc-focus='true'] {
+    border-color: $input-focus-color;
+  }
+
+  & li[data-hc-pill='true'] {
+    background: transparent;
+
+    & [aria-invalid='true'] {
+      border: 1px solid $brand-red-color;
+    }
+  }
+}
+
+.upload-dropzone {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: 18px 0;
+
+  &[data-hc-focus='true'] {
+    border-color: $input-focus-color;
   }
 }

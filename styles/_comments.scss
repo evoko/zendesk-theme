@@ -7,6 +7,8 @@
   &-heading {
     margin-bottom: 5px;
     margin-top: 0;
+    font-size: 18px;
+    font-weight: $font-weight-semibold;
   }
 
   &-overview {
@@ -22,7 +24,6 @@
   &-callout {
     color: $secondary-text-color;
     display: inline-block;
-    font-weight: $font-weight-light;
     font-size: $font-size-small;
     margin-bottom: 0;
 
@@ -37,7 +38,6 @@
 
     .dropdown-toggle {
       color: $secondary-text-color;
-      font-weight: $font-weight-light;
       font-size: $font-size-small;
     }
 
@@ -160,6 +160,10 @@
 
   &-attachments {
     margin-top: 10px;
+
+    a {
+      color: $brand_color;
+    }
   }
 
   &-body {
