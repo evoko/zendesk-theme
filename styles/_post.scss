@@ -34,7 +34,9 @@
     justify-content: space-between;
     margin-bottom: 10px;
 
-    .status-label { vertical-align: super; }
+    .status-label {
+      vertical-align: super;
+    }
   }
 
   &-title {
@@ -46,7 +48,9 @@
     width: 100%;
 
     h1 {
-      @include tablet { margin-right: 5px; }
+      @include tablet {
+        margin-right: 5px;
+      }
       display: inline;
       vertical-align: middle;
     }
@@ -63,7 +67,7 @@
   }
 
   &-content {
-    font-family: $text_font;
+    font-family: $text-font;
     line-height: 1.6;
     word-break: break-word;
   }
@@ -78,7 +82,7 @@
     padding-right: 20px;
     width: 100%;
 
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       padding-right: 0;
       padding-left: 20px;
     }
@@ -90,7 +94,7 @@
     margin-left: 10px;
     vertical-align: middle;
 
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       margin-left: 0;
       margin-right: 10px;
     }
@@ -116,8 +120,8 @@
     }
 
     .icon-comments {
-      color: $brand_color;
-      content: "\1F4AC";
+      color: $brand-color;
+      content: '\1F4AC';
       display: inline-block;
       font-size: 18px;
       padding: 5px;
@@ -131,7 +135,9 @@
       padding: 0 0 0 50px;
       text-align: initial;
 
-      [dir="rtl"] & { padding: 0 50px 0 0; }
+      [dir='rtl'] & {
+        padding: 0 50px 0 0;
+      }
     }
 
     border-top: 1px solid $border-color;
@@ -150,7 +156,9 @@
   }
 
   &-comments {
-    @include desktop { margin-bottom: 0; }
+    @include desktop {
+      margin-bottom: 0;
+    }
     margin-bottom: 20px;
   }
 }

@@ -11,15 +11,23 @@
   }
 }
 
+@mixin mobile {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
 @mixin max-width-container {
   @media (min-width: #{$max-width-container}) {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
     width: 90%;
   }
 
   max-width: $max-width-container;
   margin: 0 auto;
-  padding: 0 5%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 @mixin vertical-align {
@@ -36,11 +44,17 @@
   word-wrap: break-word; //IE/Edge compatibility
 }
 
+@mixin focus-ring {
+  outline: 0;
+  box-shadow: 0 0 0 3px $brand-color;
+}
+
 @mixin content-body {
   h2,
   h3,
   h4 {
     font-weight: $font-weight-semibold;
+    color: $text-color;
     margin-bottom: 16px;
   }
 
@@ -90,7 +104,7 @@
   code,
   pre {
     background: $primary-shade;
-    font-family: $mono_font;
+    font-family: $mono-font;
     text-align: left;
     word-spacing: normal;
     word-break: normal;
@@ -111,7 +125,6 @@
   }
 
   :not(pre) > code {
-    border: 1px solid $border-color;
     border-radius: $border-radius;
     white-space: normal;
     padding: 0 4px;
@@ -141,7 +154,7 @@
     }
 
     tr {
-      background-color: $background_color;
+      background-color: $background-color;
       border-bottom: 1px solid $border_color;
     }
 
@@ -156,7 +169,7 @@
     th {
       text-align: center;
       font-weight: $font-weight-semibold;
-      background-color: $background_color;
+      background-color: $background-color;
     }
 
     th,
@@ -170,4 +183,18 @@
       border-right: none;
     }
   }
+}
+
+@mixin visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
 }

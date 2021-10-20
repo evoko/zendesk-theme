@@ -1,8 +1,8 @@
 /***** Search results *****/
 .search-results {
   @include desktop {
-    max-width: 870px;
     margin: 0 auto;
+    max-width: $column-width;
   }
 
   display: flex;
@@ -18,14 +18,17 @@
   }
 
   &-heading {
+    font-size: 24px;
     font-weight: $font-weight-semibold;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 16px;
-    margin-bottom: 0px;
+    margin-bottom: 16px;
+
+    @include tablet {
+      font-size: 32px;
+    }
   }
 
   &-list {
-    margin-bottom: 25px;
+    margin-bottom: 24px;
     > li {
       border-bottom: 1px solid $border-color;
       padding: 24px 0;
@@ -34,22 +37,21 @@
 }
 
 .search-result {
-  &-link {
+  &-title {
     font-size: $font-size-bigger;
     font-weight: $font-weight-semibold;
-    padding-bottom: 8px;
+    margin-bottom: 4px;
   }
 
   &-description {
-    margin-bottom: 8px;
-    margin-top: 8px;
+    margin-bottom: 0px;
+    margin-top: 4px;
     word-break: break-word;
+    color: $secondary-text-color;
 
     em {
       font-style: normal;
       font-weight: $font-weight-semibold;
-      background-color: rgba(lighten($brand-yellow-color, 20%), 0.7);
-      padding: 0px 2px;
     }
   }
 
@@ -59,33 +61,18 @@
     color: $secondary-text-color;
     display: inline-block;
     font-size: $font-size-navigation;
-    // font-weight: $font-weight-light;
-    // padding: 4px 5px;
     position: relative;
 
-    &::before {
-      @extend .icon;
-      color: $brand_color;
-      font-weight: $font-weight-semibold;
-      margin-right: 3px;
+    &-icon {
+      color: $brand-color;
+      width: 13px;
+      height: 13px;
     }
-  }
-
-  &-votes::before {
-    content: '\1F44D';
-  }
-
-  &-comments::before {
-    content: '\1F4AC';
-    margin-right: 5px;
-  }
-
-  &-meta-count::before {
-    content: '\1F4AC';
   }
 
   .meta-group {
     align-items: center;
+    padding-bottom: 16px;
   }
 
   &-breadcrumbs {
@@ -96,16 +83,5 @@
       display: inline-block;
       margin: 0 5px;
     }
-  }
-}
-
-/* Don't display CJK results in italic */
-/* Add a yellow background instead */
-html[lang|='zh'],
-html[lang|='ko'],
-html[lang|='ja'] {
-  .search-result-description em {
-    font-style: normal;
-    background: yellow;
   }
 }

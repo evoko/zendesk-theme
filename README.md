@@ -1,6 +1,6 @@
 # Evoko theme for Zendesk Guide
 
-This repository contains the [Evoko support website frontend](https://support.evoko.se/hc/en-us) running on the Zendesk Guide platform.
+This repo contains the [Evoko support frontend](https://support.evoko.se/hc/en-us) running on the Zendesk Guide platform.
 
 The theme is based of the default [Zendesk Copenhagen theme](https://github.com/zendesk/copenhagen_theme) which is designed to be responsive and accessible. Check out the [Using themes and customizing your Help Center](https://support.zendesk.com/hc/en-us/sections/206670747) section and [developer documentation](https://developer.zendesk.com/apps/docs/help-center-templates/introduction) to learn more.
 
@@ -9,9 +9,9 @@ The theme is based of the default [Zendesk Copenhagen theme](https://github.com/
 When importing a theme to Zendesk Guide it will mainly look for the following files and folders:
 
 - [`templates/`](#templates) - contains all markup.
-- [`Style.css`](#styles) - contains all CSS.
-- [`script.js`](#scripts) - main script file that will be included in the page `<head>`.
-- [`assets/`](#assets-folder) - assets such as scripts or images.
+- [`style.css`](#styles) - contains all CSS.
+- [`script.js`](#scripts) - main script file.
+- [`assets/`](#assets-folder) - assets such as scripts or fonts.
 - [`manifest.json`](#manifest-file) - project metadata and settings.
 - [`settings/`](#settings-folder) - files to be used in settings in [`manifest.json`](manifest.json).
 
@@ -60,15 +60,15 @@ For development this project uses the CSS preprocessor [Sass](https://sass-lang.
 
 ### Scripts
 
-The main JavaScript file [`script.js`](script.js) is located in the project root and will be added in the document `<head>` of every page.
+The main JavaScript file [`script.js`](script.js) is located in the project root and will be added in the document `<body>` of every page.
 
-JavaScript that you do not think belong in the document `<head>` can be added inline in [templates](#templates) or added as regular `*.js` files in the [assets folder](#assets-folder) and then be included in the appropriate template(s).
+JavaScript that you do not think belong on all pages can be added inline in [templates](#templates) or added as regular `*.js` files in the [assets folder](#assets-folder) and then be included in the appropriate template(s).
 
 ### Assets folder
 
 You can add assets as images and files to the [`assets/`](assets/) folder and use them in your CSS and templates, for example:
 
-```shell
+```
 # template
 {{asset 'cat-image.jpg'}}
 
@@ -107,10 +107,6 @@ And this would look for a file inside the [`settings/`](settings/) folder named 
 
 ## Developing
 
-To start contributing, clone the repository (`git clone https://github.com/evoko/zendesk-theme.git`) and create a feature/bug branch (e.g. `git checkout -b feature/that-new-feature` or `bug/fix-for-that-bug`) to work on.
-
-### Local previewing
-
 You can use your favorite IDE to develop and preview your changes locally in a web browser using the Zendesk Apps Tools (ZAT) which is installed as a Ruby gem. For more details, see [Previewing theme changes locally](https://support.zendesk.com/hc/en-us/articles/115012793547).
 
 To avoid having to enter your Zendesk credentials every time you start your development environment you can create a `.zat` file in the project root which contains your credentials in json format, for example like this:
@@ -123,22 +119,14 @@ To avoid having to enter your Zendesk credentials every time you start your deve
 }
 ```
 
-### npm tools
+Once you have ZAT setup make sure [Node.js](https://nodejs.org/) is installed and then use the below commands:
 
-To make use of some development tools you will need to have [Node.js](https://nodejs.org/) installed and then run the below command:
-
-```shell
+```bash
+# install dependencies
 npm install
-```
 
-In [`package.json`](package.json) you will find a list of the dev dependencies along with some [npm scripts](https://docs.npmjs.com/misc/scripts.html). Example on how to run a script:
-
-```shell
-# Watch Sass changes and write to style.css
-npm run styles:watch
-
-# Complies Sass, minify and autoprefix to style.css
-npm run styles:build
+# start the development server
+npm start
 ```
 
 ## Deploying
@@ -146,8 +134,6 @@ npm run styles:build
 For deploying changes to production we use the [Zendesk GitHub integration](https://support.zendesk.com/hc/en-us/community/posts/360004400007), the workflow can be summarized to:
 
 1. Increment the `version` in [`manifest.json`](manifest.json) (without this Zendesk won't recognize an update).
-2. Commit your changes and merge your branch to the master branch.
+2. Commit your changes and merge your branch to the main branch.
 3. In the [Zendesk Guide theming center](https://support.evoko.se/theming) press **Update from GitHub**.
 4. Changes should now be live! 🎉
-
-If you'd like to test your changes on a live website (instead of [Local previewing](#local-previewing)) before updating production then you could keep the changes on a separate branch than master and import the theme to the [Sandbox environment](https://erm.zendesk.com/agent/admin/sandbox).

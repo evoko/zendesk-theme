@@ -1,28 +1,14 @@
 /***** Hero component *****/
 .hero {
-  background-image: url($homepage_background_image);
   background-position: center;
   background-size: cover;
   padding: 0 5%;
   text-align: center;
   width: 100%;
-  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
-    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  margin-top: -$header-height;
+  height: 80vh;
 
-  &-large {
-    margin-top: -$header-height;
-  }
-
-  &-large {
-    height: 85vh;
-  }
-
-  &-small {
-    height: $header-height * 2;
-  }
-
-  &-large::before,
-  &-small::before {
+  &::before {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -31,16 +17,9 @@
     z-index: 1;
     content: '';
     opacity: 0.75;
-    background-color: $text_color;
-    background-image: linear-gradient(60deg, darken($brand_color, 25%) 20%, $text_color 70%);
-  }
-
-  &-large::before {
-    max-height: 85vh;
-  }
-
-  &-small::before {
-    max-height: $header-height * 2;
+    background-color: $text-color;
+    background-image: linear-gradient(-10deg, $brand-color 00%, $background-color 60%);
+    max-height: 80vh;
   }
 
   &-inner {
@@ -51,7 +30,7 @@
     color: white;
 
     & a {
-      color: $brand_text_color;
+      color: $text-color;
       font-weight: $font-weight-semibold;
       text-decoration: underline;
     }
@@ -59,11 +38,10 @@
     & a:hover,
     & a:focus,
     & a:active {
-      color: $brand_color;
+      color: $brand-color;
     }
 
-    &-home-heading {
-      color: $brand_text_color;
+    &-heading {
       font-weight: $font-weight-semibold;
       margin-bottom: 16px;
 
@@ -73,25 +51,13 @@
     }
 
     &-search {
-      max-width: 870px;
+      max-width: $column-width;
       margin: 0 auto;
+      position: relative;
     }
 
     &-description {
       font-size: $font-size-base;
-    }
-
-    &-page-heading {
-      color: $brand_text_color;
-      background: #00cdff61;
-      margin: 0 auto;
-      width: -moz-fit-content;
-      width: fit-content;
-      padding: 0 5%;
-
-      @media (min-width: 580px) {
-        font-size: 48px;
-      }
     }
   }
 }

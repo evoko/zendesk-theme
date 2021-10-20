@@ -1,43 +1,38 @@
-// Variables
-
-// ################################################
 // Colors
-// ################################################
-$brand_color: #74bf95 !default;
-$brand_text_color: #fff !default;
-$text_color: #24292e !default;
-$link_color: #0366d6 !default;
-$background_color: #fff !default;
-$brand-yellow-color: #fbc337 !default;
-$brand-red-color: #e9495f !default;
-$brand-blue-color: #51c2e1 !default;
-$border-color: #ddd !default;
+$brand-color: #00f07a;
+$brand-text-color: #000;
+$background-color: #000;
+$text-color: #fff;
+$yellow-color: #fcea0a;
+$red-color: #eb593c;
+$blue-color: #0391ff;
+$grey01-color: #e5e5e8;
+$grey02-color: #7a7878;
+$grey03-color: #4d4f4d;
+$grey04-color: #333633;
+$grey05-color: lighten($background-color, 15%);
+$grey06-color: lighten($background-color, 10%);
 
-$hover-button-color: darken($brand_color, 10%);
-$secondary-text-color: lighten($text_color, 20%);
+$primary-shade: $grey05-color;
+$secondary-shade: $grey04-color;
+$secondary-text-color: $grey01-color;
+$border-color: $grey02-color;
+$link_color: $brand-color;
+$input-focus-color: $brand-color;
+$button-color: $brand-color;
+$hover-button-color: darken($brand-color, 10%);
 
-$primary-shade: darken($background_color, 3%);
-$secondary-shade: darken($background_color, 5%);
-
-$input-focus-color: #999;
-
-$button-color: $brand_color;
-
-// ################################################
 // Breakpoints
-// ################################################
 $tablet-width: 768px;
 $desktop-width: 1024px;
 $max-width-container: 1160px;
 
-// ################################################
 // Fonts
-// ################################################
-$heading_font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
-$text_font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
-$mono_font: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace !default;
+$heading-font: 'Roobert', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+$text-font: $heading-font;
+$mono-font: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, Consolas,
+  'Liberation Mono', monospace;
 
 $font-weight-light: 300;
 $font-weight-base: 400;
@@ -48,17 +43,23 @@ $font-size-navigation: 14px;
 $font-size-base: 16px;
 $font-size-bigger: 18px;
 
-// ################################################
 // Common values
-// ################################################
-$border-radius: 4px;
+$border-radius: 5px;
 $header-height: 70px;
+$column-width: 720px;
 
-// ################################################
 // CSS assets (necessary for use with scss and zendesk assets)
-// ################################################
-$assets-dropdown-arrow-svg: '$assets-dropdown-arrow-svg';
-$assets-loader-gif: '$assets-loader-gif';
 $homepage_background_image: '$homepage_background_image';
-$community_image: '$community_image';
 $community_background_image: '$community_background_image';
+
+$assets-roobert-light-woff2: '$assets-roobert-light-woff2';
+$assets-roobert-light-woff: '$assets-roobert-light-woff';
+$assets-roobert-light-italic-woff2: '$assets-roobert-light-italic-woff2';
+$assets-roobert-light-italic-woff: '$assets-roobert-light-italic-woff';
+$assets-roobert-semibold-woff2: '$assets-roobert-semibold-woff2';
+$assets-roobert-semibold-woff: '$assets-roobert-semibold-woff';
+
+$assets-ibm-plex-mono-light-woff2: '$assets-ibm-plex-mono-light-woff2';
+$assets-ibm-plex-mono-light-woff: '$assets-ibm-plex-mono-light-woff';
+$assets-ibm-plex-mono-bold-woff2: '$assets-ibm-plex-mono-bold-woff2';
+$assets-ibm-plex-mono-bold-woff: '$assets-ibm-plex-mono-bold-woff';

@@ -7,6 +7,8 @@
   &-heading {
     margin-bottom: 5px;
     margin-top: 0;
+    font-size: 18px;
+    font-weight: $font-weight-semibold;
   }
 
   &-overview {
@@ -22,12 +24,11 @@
   &-callout {
     color: $secondary-text-color;
     display: inline-block;
-    font-weight: $font-weight-light;
     font-size: $font-size-small;
     margin-bottom: 0;
 
     a {
-      color: $brand_color;
+      color: $brand-color;
     }
   }
 
@@ -37,7 +38,6 @@
 
     .dropdown-toggle {
       color: $secondary-text-color;
-      font-weight: $font-weight-light;
       font-size: $font-size-small;
     }
 
@@ -55,7 +55,7 @@
         padding-top: 20px;
       }
 
-      border: 1px solid $brand_color;
+      border: 1px solid $brand-color;
       padding: 40px 20px 20px; // 20 + 20 of official commment badge
     }
   }
@@ -160,12 +160,16 @@
 
   &-attachments {
     margin-top: 10px;
+
+    a {
+      color: $brand-color;
+    }
   }
 
   &-body {
     @include text-overflow;
     @include content-body;
-    font-family: $text_font;
+    font-family: $text-font;
     line-height: 1.6;
     overflow-x: auto;
   }

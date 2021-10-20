@@ -1,21 +1,66 @@
 /***** Base *****/
+@font-face {
+  font-family: 'Roobert';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url($assets-roobert-light-woff2) format('woff2'),
+    url($assets-roobert-light-woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'Roobert';
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  src: url($assets-roobert-light-italic-woff2) format('woff2'),
+    url($assets-roobert-light-italic-woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'Roobert';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url($assets-roobert-semibold-woff2) format('woff2'),
+    url($assets-roobert-semibold-woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url($assets-ibm-plex-mono-light-woff2) format('woff2'),
+    url($assets-ibm-plex-mono-light-woff) format('woff');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url($assets-ibm-plex-mono-bold-woff2) format('woff2'),
+    url($assets-ibm-plex-mono-bold-woff) format('woff');
+}
+
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: $background_color;
-  color: $text_color;
-  font-family: $text_font;
+  background-color: $grey06-color;
+  background-image: linear-gradient(350deg, $brand-color -300%, $grey06-color 40%);
+  color: $text-color;
+  font-family: $text-font;
   font-size: $font-size-base;
   font-weight: $font-weight-base;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 
   > main {
-    @include desktop {
-      min-height: 65vh;
-    }
+    min-height: calc(100vh - $header-height);
   }
 }
 
@@ -25,7 +70,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $heading_font;
+  font-family: $heading-font;
   font-weight: $font-weight-base;
   margin-top: 0;
 }
@@ -60,10 +105,18 @@ strong {
   font-weight: $font-weight-semibold;
 }
 
+::selection {
+  background-color: $brand-color;
+  color: $background-color;
+}
+
 input,
-textarea {
-  color: $text_color;
+textarea,
+select {
+  color: $text-color;
   font-size: $font-size-base;
+  background-color: transparent;
+  font-family: $text-font;
 }
 
 input {
@@ -74,7 +127,7 @@ input {
   transition: border 0.12s ease-in-out;
 
   &:focus {
-    border: 1px solid $brand_color;
+    border: 1px solid $brand-color;
   }
 }
 
@@ -85,10 +138,11 @@ input[disabled] {
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: url($assets-dropdown-arrow-svg) no-repeat #fff;
+  background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23CCC' d='M0 0h10L5 6 0 0z'/%3E%3C/svg%3E%0A")
+    no-repeat;
   background-position: right 10px center;
   border: 1px solid $border-color;
-  border-radius: 4px;
+  border-radius: $border-radius;
   padding: 8px 30px 8px 10px;
   outline: none;
   color: $secondary-text-color;
@@ -98,14 +152,15 @@ select {
     border: 1px solid $input-focus-color;
   }
 
-  &::-ms-expand {
-    display: none;
+  option {
+    background-color: $primary-shade;
+    color: $text-color;
   }
 }
 
 textarea {
   border: 1px solid $border-color;
-  border-radius: 2px;
+  border-radius: $border-radius;
   resize: vertical;
   width: 100%;
   outline: none;
@@ -118,6 +173,11 @@ textarea {
 
 .container {
   @include max-width-container;
+
+  &-spacing {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
 }
 
 .container-divider {
@@ -131,12 +191,11 @@ ul {
 }
 
 .error-page {
-  @include max-width-container;
-  min-height: 65vh;
-
   &-heading {
     font-size: 38px;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
 
     @media (min-width: $tablet-width) {
       font-size: 48px;
@@ -144,8 +203,12 @@ ul {
   }
 
   &-status-code {
-    font-family: $mono_font;
+    font-family: $mono-font;
   }
+}
+
+.visibility-hidden {
+  @include visually-hidden;
 }
 
 .dropdown-toggle {
@@ -155,7 +218,6 @@ ul {
   text-align: initial;
 }
 .dropdown-toggle:focus {
-  outline: 0;
   text-decoration: underline;
 }
 

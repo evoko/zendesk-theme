@@ -1,9 +1,9 @@
 /***** Status labels *****/
 /* Styles labels used in posts, articles and requests */
 .status-label {
-  background-color: #1eb848;
-  border-radius: 4px;
-  color: #fff;
+  background-color: $brand-color;
+  border-radius: $border-radius;
+  color: $brand-text-color;
   font-size: 12px;
   margin-right: 2px;
   padding: 3px 10px;
@@ -20,7 +20,7 @@
   &-pinned,
   &-featured,
   &-official {
-    background-color: $brand_color;
+    background-color: $brand-color;
   }
 
   &-official {
@@ -33,12 +33,12 @@
     width: 100%;
 
     @include tablet {
-      border-radius: 0 0 4px 4px;
+      border-radius: 0 0 $border-radius $border-radius;
       right: 30px;
       width: auto;
     }
 
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       left: 30px;
       right: auto;
     }
@@ -46,8 +46,7 @@
 
   &-pending,
   &-not-planned {
-    background-color: #eee;
-    color: $secondary-text-color;
+    background-color: $grey01-color;
   }
 
   &-pending {
@@ -55,24 +54,24 @@
   }
 
   &-open {
-    background-color: #cc3340;
+    background-color: $red-color;
   }
 
-
   &-closed {
-    background-color: #ddd;
+    background-color: $grey01-color;
   }
 
   &-solved {
-    background-color: #999;
+    background-color: $grey02-color;
   }
 
   &-new {
-    background-color: #ffd12a;
+    background-color: $yellow-color;
   }
 
   &-hold {
-    background-color: #000;
+    background-color: $background-color;
+    color: $text-color;
   }
 
   &-open,
