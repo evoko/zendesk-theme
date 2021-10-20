@@ -30,12 +30,6 @@
           "type": "file",
           "description": "community_background_image_description",
           "label": "community_background_image_label"
-        },
-        {
-          "identifier": "community_image",
-          "type": "file",
-          "description": "community_image_description",
-          "label": "community_image_label"
         }
       ]
     },
@@ -127,7 +121,7 @@
           "type": "checkbox",
           "description": "follow_section_description",
           "label": "follow_section_label",
-          "value": true
+          "value": false
         }
       ]
     },

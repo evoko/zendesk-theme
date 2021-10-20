@@ -31,21 +31,21 @@
 
 .form-field input {
   border: 1px solid $border-color;
-  border-radius: 4px;
+  border-radius: $border-radius;
   padding: 10px;
   width: 100%;
 
   &:focus {
-    border: 1px solid $brand_color;
+    border: 1px solid $brand-color;
   }
 }
 
 .form-field input[type='text'] {
   border: 1px solid $border-color;
-  border-radius: 4px;
+  border-radius: $border-radius;
 
   &:focus {
-    border: 1px solid $brand_color;
+    border: 1px solid $brand-color;
   }
 }
 
@@ -65,14 +65,14 @@
   color: $text-color;
 
   &:focus {
-    border: 1px solid $brand_color;
+    border: 1px solid $brand-color;
     text-decoration: none;
   }
 }
 
 .form-field .hc-multiselect-toggle:focus {
   outline: none;
-  border: 1px solid $brand_color;
+  border: 1px solid $brand-color;
   text-decoration: none;
 }
 
@@ -132,8 +132,8 @@
   & li[data-hc-pill='true'] {
     background: transparent;
 
-    & [aria-invalid='true'] {
-      border: 1px solid $brand-red-color;
+    &[aria-invalid='true'] {
+      border: 1px solid $red-color;
     }
   }
 }
@@ -146,4 +146,20 @@
   &[data-hc-focus='true'] {
     border-color: $input-focus-color;
   }
+}
+
+.nesty-panel li {
+  background-color: $primary-shade;
+  color: $secondary-text-color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $secondary-shade;
+    color: $text-color;
+  }
+}
+
+.nesty-panel li.nesty-selected {
+  background-color: $secondary-shade;
 }

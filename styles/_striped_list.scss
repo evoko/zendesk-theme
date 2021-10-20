@@ -69,7 +69,7 @@
 
   &-number {
     @include tablet {
-      color: $text_color;
+      color: $text-color;
       display: block;
       font-weight: $font-weight-base;
     }

@@ -4,31 +4,31 @@
 }
 
 .split-button button:hover {
-  background-color: $brand_color;
-  color: $brand_text_color;
+  background-color: $brand-color;
+  color: $brand-text-color;
   text-decoration: none;
 }
 
 .split-button button {
   @extend .button;
-  background-color: $brand_color;
+  background-color: $brand-color;
   border: 0;
-  color: $brand_text_color;
+  color: $brand-text-color;
   height: 32px;
   line-height: 16px;
-  outline-color: $brand_color;
+  outline-color: $brand-color;
 }
 
 .split-button button:not(:only-child) {
   &:first-child {
     [dir='rtl'] & {
-      border-left: 1px solid $brand_text_color;
+      border-left: 1px solid $brand-text-color;
       border-top-left-radius: unset;
       border-bottom-left-radius: unset;
     }
 
     [dir='ltr'] & {
-      border-right: 1px solid $brand_text_color;
+      border-right: 1px solid $brand-text-color;
       border-top-right-radius: unset;
       border-bottom-right-radius: unset;
     }

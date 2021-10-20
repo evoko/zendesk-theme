@@ -222,9 +222,9 @@
   align-items: center;
   justify-content: center;
   flex-basis: 100%;
-  border: solid 1px $brand_color;
-  border-radius: 4px;
-  color: $brand_color;
+  border: solid 1px $brand-color;
+  border-radius: $border-radius;
+  color: $brand-color;
   padding: 5px 20px;
   font-size: 12px;
   text-align: center;
@@ -572,7 +572,7 @@
 .profile-activity-contribution {
   padding: 20px;
   margin-top: 10px;
-  border-radius: 8px;
+  border-radius: $border-radius;
   background-color: $primary-shade;
 
   @include tablet {
@@ -596,7 +596,7 @@
   border-radius: 50%;
   background-size: 14px 14px;
   background-repeat: no-repeat;
-  background-color: $background_color;
+  background-color: $background-color;
   background-position: 50% 50%;
   text-align: center;
   color: #ccc;

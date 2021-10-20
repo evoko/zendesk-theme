@@ -1,14 +1,20 @@
 /***** Homepage *****/
-.home-categories {
-  min-height: 100vh;
+.home {
+  &-hero {
+    background-image: url($homepage_background_image);
+  }
 
-  &-heading {
-    text-align: center;
-    font-size: 32px;
-    font-weight: $font-weight-semibold;
+  &-categories {
+    min-height: 100vh;
 
-    @media (max-width: 580px) {
-      font-size: 26px;
+    &-heading {
+      text-align: center;
+      font-size: 32px;
+      font-weight: $font-weight-semibold;
+
+      @media (max-width: 580px) {
+        font-size: 26px;
+      }
     }
   }
 }

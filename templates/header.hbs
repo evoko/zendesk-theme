@@ -1,27 +1,28 @@
 <header class="header">
-  <div class="header-logo-container">
+  <div class="header-logo">
     <a class="header-logo-image" href="https://evoko.se">
-      <svg class="evoko-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 755 186">
+      <svg class="evoko-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 755 186" aria-hidden="true">
         <path d="M632.02 51.9378C594.223 51.9378 564.309 82.3922 564.309 119.105C564.309 155.818 594.763 186 632.02 186C669.545 186 700.003 155.813 700.003 119.105C700.003 82.3965 669.821 51.9378 632.02 51.9378ZM632.02 165.877C605.915 165.877 585.248 143.849 585.248 119.105C585.248 94.6326 605.371 72.0608 632.02 72.0608C658.669 72.0608 679.064 94.6326 679.064 119.105C679.064 143.854 658.397 165.877 632.02 165.877ZM349.734 51.9378C311.937 51.9378 282.023 82.3922 282.023 119.105C282.023 155.818 312.477 186 349.734 186C387.259 186 417.717 155.813 417.717 119.105C417.717 82.3965 387.531 51.9378 349.734 51.9378ZM349.734 165.877C323.629 165.877 302.962 143.849 302.962 119.105C302.962 94.6326 323.085 72.0608 349.734 72.0608C376.383 72.0608 396.778 94.6326 396.778 119.105C396.778 143.854 376.111 165.877 349.734 165.877ZM194.444 183.555H217.555L271.942 54.3868H249.098L206.135 158.262L162.897 54.3868H140.057L194.444 183.555ZM130.801 117.744C130.801 82.1201 102.791 51.9378 66.0829 51.9378C27.7376 51.9378 0 82.3965 0 119.105C0 156.902 29.9144 186 67.9834 186C90.2831 186 110.678 176.209 122.37 159.623L107.685 148.203C98.9819 160.439 84.029 166.693 67.7113 166.693C41.8784 166.693 23.3882 149.291 20.9392 125.359H130.257C130.801 122.37 130.801 119.921 130.801 117.744ZM22.0276 106.597C26.6491 85.6574 44.3274 71.2444 65.8065 71.2444C87.5621 71.2444 105.78 85.6574 109.046 106.597H22.0276ZM535.249 183.555H560.81L502.618 109.046L555.644 54.3868H528.179L469.715 114.211V0H447.959V183.555H469.715V143.037L487.933 124.271L535.249 183.555Z" />
         <path d="M715.595 54.305H707V52.0043H726.663V54.305H718.107V78H715.591V54.305H715.595ZM730.005 52H733.573L742.502 74.7661L751.432 52H755V78H752.484V55.866L743.702 78H741.299L732.517 55.866V78H730.001V52H730.005Z" />
       </svg>
-      <span class="visibility-hidden">Evoko website</span>
+      <span class="visibility-hidden">evoko website</span>
     </a>
     <a class="header-logo-title" href="/hc/en-us">support</a>
   </div>
 
-  <div class="header-search">
-    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
-      class="search-icon" aria-hidden="true">
+  <div class="header-desktop-search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
       <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor" />
       <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5" />
     </svg>
     {{search submit=false instant=settings.instant_search placeholder="Search knowledge base..."}}
   </div>
 
-  <div class="nav-wrapper">
+  <div class="header-desktop-menu">
     <nav class="user-nav" id="user-nav">
+      {{#if help_center.community_enabled}}
       {{link 'community'}}
+      {{/if}}
       {{link 'new_request'}}
     </nav>
     {{#if signed_in}}
@@ -36,7 +37,7 @@
           </svg>
         </span>
       </button>
-      <div class="dropdown-menu" role="menu">
+      <div class="dropdown-menu dropdown-menu-end" role="menu">
         {{link "my_activities" role="menuitem"}}
         {{my_profile role="menuitem"}}
         {{change_password role="menuitem"}}
@@ -51,32 +52,33 @@
   </div>
 
   <div class="header-mobile-actions">
-    <button aria-expanded="false" aria-label="toggle search">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" focusable="false" viewBox="0 0 12 12"
-        aria-hidden="true">
+    {{!-- TODO: make search available in the header instead of linking to the search page --}}
+    <a href="/hc/en-us/search" class="search-button" >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" focusable="false" viewBox="0 0 12 12" aria-hidden="true">
         <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor" />
         <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5" />
       </svg>
-    </button>
+    </a>
   
-    <button aria-expanded="false" aria-label="{{t 'toggle_navigation'}}">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" focusable="false" viewBox="0 0 16 16"
-        class="menu-icon">
+    <button aria-expanded="false" aria-controls="mobile-menu" aria-label="{{t 'toggle_navigation'}}" class="menu-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" focusable="false" viewBox="0 0 16 16" aria-hidden="true" class="menu-icon">
         <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13" />
       </svg>
   
-      {{!-- <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" focusable="false" viewBox="0 0 12 12"
-        aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="x-icon">
         <path stroke="currentColor" stroke-linecap="round" d="M3 9l6-6m0 6L3 3" />
-      </svg> --}}
+      </svg>
     </button>
   </div>
-</header>
 
-<div class="mobile-menu">
+
+</header>
+<nav class="header-mobile-menu" aria-expanded="false" id="mobile-menu">
   <ul>
     <li>{{link 'new_request'}}</li>
+    {{#if help_center.community_enabled}}
     <li>{{link 'community'}}</li>
+    {{/if}}
     {{#if signed_in}}
     <li>{{my_profile}}</li>
     <li>{{link "my_activities"}}</li>
@@ -85,9 +87,10 @@
     {{else}}
     <li>
       {{#link "sign_in"}}
-        {{t 'sign_in'}}
+      {{t 'sign_in'}}
       {{/link}}
     </li>
     {{/if}}
   </ul>
-</div>
+</nav>
+

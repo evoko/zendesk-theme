@@ -46,7 +46,7 @@
 
 @mixin focus-ring {
   outline: 0;
-  box-shadow: 0 0 0 3px $brand_color;
+  box-shadow: 0 0 0 3px $brand-color;
 }
 
 @mixin content-body {
@@ -104,7 +104,7 @@
   code,
   pre {
     background: $primary-shade;
-    font-family: $mono_font;
+    font-family: $mono-font;
     text-align: left;
     word-spacing: normal;
     word-break: normal;
@@ -154,7 +154,7 @@
     }
 
     tr {
-      background-color: $background_color;
+      background-color: $background-color;
       border-bottom: 1px solid $border_color;
     }
 
@@ -169,7 +169,7 @@
     th {
       text-align: center;
       font-weight: $font-weight-semibold;
-      background-color: $background_color;
+      background-color: $background-color;
     }
 
     th,

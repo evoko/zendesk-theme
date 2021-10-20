@@ -27,7 +27,7 @@
     }
 
     margin: 6px 0;
-    color: $text_color;
+    color: $text-color;
     display: inline-block;
     width: 100%;
   }
@@ -80,7 +80,7 @@
   &-comment-icon {
     svg {
       vertical-align: middle;
-      color: $brand_color;
+      color: $brand-color;
       width: 16px;
       height: 16px;
     }

@@ -1,27 +1,14 @@
 /***** Hero component *****/
 .hero {
-  background-image: url($homepage_background_image);
   background-position: center;
   background-size: cover;
   padding: 0 5%;
   text-align: center;
   width: 100%;
+  margin-top: -$header-height;
+  height: 80vh;
 
-  &-large {
-    margin-top: -$header-height;
-  }
-
-  &-large {
-    height: 100vh;
-  }
-
-  &-small {
-    height: $header-height * 2;
-    margin-bottom: 30px;
-  }
-
-  &-large::before,
-  &-small::before {
+  &::before {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -30,16 +17,9 @@
     z-index: 1;
     content: '';
     opacity: 0.75;
-    background-color: $text_color;
-    background-image: linear-gradient(-10deg, $brand_color 00%, $background_color 60%);
-  }
-
-  &-large::before {
-    max-height: 100vh;
-  }
-
-  &-small::before {
-    max-height: $header-height * 2;
+    background-color: $text-color;
+    background-image: linear-gradient(-10deg, $brand-color 00%, $background-color 60%);
+    max-height: 80vh;
   }
 
   &-inner {
@@ -50,7 +30,7 @@
     color: white;
 
     & a {
-      color: $text_color;
+      color: $text-color;
       font-weight: $font-weight-semibold;
       text-decoration: underline;
     }
@@ -58,10 +38,10 @@
     & a:hover,
     & a:focus,
     & a:active {
-      color: $brand_color;
+      color: $brand-color;
     }
 
-    &-home-heading {
+    &-heading {
       font-weight: $font-weight-semibold;
       margin-bottom: 16px;
 
@@ -78,19 +58,6 @@
 
     &-description {
       font-size: $font-size-base;
-    }
-
-    &-page-heading {
-      color: $brand_text_color;
-      background: #00cdff61;
-      margin: 0 auto;
-      width: -moz-fit-content;
-      width: fit-content;
-      padding: 0 5%;
-
-      @media (min-width: 580px) {
-        font-size: 48px;
-      }
     }
   }
 }

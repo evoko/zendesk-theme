@@ -95,7 +95,7 @@
     </ul>
     {{else}}
     <p>
-      Sorry, we looked everywhere. Please try a different search, <a href="/hc/en-us#browse-knowledge-base">browse articles</a> or <a href="/hc/en-us/requests/new">submit a request</a>.
+      Sorry, we looked everywhere. Please try a different search, <a href="/hc/en-us#browse-knowledge-base">browse articles</a> or {{#link 'new_request'}}submit a request{{/link}}.
     </p>
     {{/if}}
 </section>
@@ -103,5 +103,6 @@
 </div>
 
 <style>
-  .header-search { display: none; }
+  .header-desktop-search { display: none; }
+  .header .search-button { display: none; }
 </style>

@@ -183,24 +183,22 @@ document.addEventListener('DOMContentLoaded', function () {
     toggle.focus();
   }
 
-  // var burgerMenu = document.querySelector('.header .menu-button');
-  // var userMenu = document.querySelector('#user-nav');
+  var mobileMenuButton = document.querySelector('.header .menu-button');
+  var mobileMenu = document.querySelector('#mobile-menu');
+  var body = document.querySelector('body');
 
-  // burgerMenu.addEventListener('click', function (e) {
-  //   e.stopPropagation();
-  //   toggleNavigation(this, userMenu);
-  // });
+  mobileMenuButton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    toggleNavigation(this, mobileMenu);
+    body.classList.toggle('no-scroll');
+  });
 
-  // userMenu.addEventListener('keyup', function (e) {
-  //   if (e.keyCode === ESCAPE) {
-  //     e.stopPropagation();
-  //     closeNavigation(burgerMenu, this);
-  //   }
-  // });
-
-  // if (userMenu.children.length === 0) {
-  //   burgerMenu.style.display = 'none';
-  // }
+  mobileMenu.addEventListener('keyup', function (e) {
+    if (e.keyCode === ESCAPE) {
+      e.stopPropagation();
+      closeNavigation(mobileMenuButton, this);
+    }
+  });
 
   // Toggles expanded aria to collapsible elements
   var collapsible = document.querySelectorAll('.collapsible-nav, .collapsible-sidebar');

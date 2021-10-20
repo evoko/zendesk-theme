@@ -33,48 +33,48 @@
 
 .note,
 .callout-note {
-  border-color: $brand-yellow-color;
-  background-color: rgba($brand-yellow-color, 0.2);
+  border-color: $yellow-color;
+  background-color: rgba($yellow-color, 0.2);
 }
 
 .note::before,
 .callout-note::before {
   content: '\f0f3';
-  color: $brand-yellow-color;
+  color: $yellow-color;
 }
 
 .success,
 .callout-success {
-  border-color: $brand_color;
-  background-color: rgba($brand_color, 0.1);
+  border-color: $brand-color;
+  background-color: rgba($brand-color, 0.1);
 }
 
 .success::before,
 .callout-success::before {
   content: '\f164';
-  color: $brand_color;
+  color: $brand-color;
 }
 
 .important,
 .callout-important {
-  border-color: $brand-red-color;
-  background-color: rgba($brand-red-color, 0.1);
+  border-color: $red-color;
+  background-color: rgba($red-color, 0.1);
 }
 
 .important::before,
 .callout-important::before {
   content: '\f0a1';
-  color: $brand-red-color;
+  color: $red-color;
 }
 
 .tip,
 .callout-tip {
-  border-color: $brand-blue-color;
-  background-color: rgba($brand-blue-color, 0.1);
+  border-color: $blue-color;
+  background-color: rgba($blue-color, 0.1);
 }
 
 .tip::before,
 .callout-tip::before {
   content: '\f0d0';
-  color: $brand-blue-color;
+  color: $blue-color;
 }

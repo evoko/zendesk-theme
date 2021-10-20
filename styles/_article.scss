@@ -46,7 +46,7 @@
 
   &-date {
     font-size: $font-size-navigation;
-    color: $brand-grey02-color;
+    color: $grey02-color;
   }
 
   &-title {
@@ -116,7 +116,7 @@
 
     &-icon {
       vertical-align: middle;
-      color: $brand_color;
+      color: $brand-color;
       width: 18px;
       height: 18px;
     }
@@ -168,7 +168,7 @@
     text-align: center;
 
     &-count {
-      color: $brand-grey02-color;
+      color: $grey02-color;
     }
   }
 
@@ -192,7 +192,7 @@
     border-top: 1px solid $border-color;
 
     a {
-      color: $text_color;
+      color: $text-color;
       display: block;
       padding: 20px 0;
 
@@ -251,17 +251,17 @@
     &:focus {
       background-color: $secondary-shade;
       text-decoration: none;
-      color: $text_color;
+      color: $text-color;
     }
 
     &-show-all {
-      color: $brand_color;
+      color: $brand-color;
 
       &:hover,
       &:active,
       &:focus {
-        background-color: $brand_color;
-        color: $brand_text_color;
+        background-color: $brand-color;
+        color: $brand-text-color;
       }
     }
   }

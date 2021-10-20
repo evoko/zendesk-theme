@@ -11,7 +11,7 @@
   padding: 0;
   text-align: initial;
   vertical-align: middle;
-  color: $text_color;
+  color: $text-color;
 
   &:hover {
     text-decoration: none;
@@ -23,9 +23,9 @@
 }
 
 .dropdown-menu {
-  background: #fff;
-  border: 1px solid rgb(216, 216, 216);
-  border-radius: 3px;
+  background: $primary-shade;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   display: none;
   font-size: 14px;
@@ -48,7 +48,7 @@
   }
 
   [role='separator'] {
-    border-bottom: 1px solid rgb(216, 216, 216);
+    border-bottom: 1px solid $border-color;
     color: rgb(150, 150, 150);
     display: block;
     font-weight: normal;
@@ -58,7 +58,7 @@
   }
 
   [role='menuitem'] {
-    color: #333;
+    color: $text-color;
     cursor: pointer;
     display: block;
     padding: 7px 40px 7px 20px;
@@ -76,9 +76,9 @@
     }
     &:hover,
     &:focus {
-      background: #f3f3f3;
+      background: $secondary-shade;
       text-decoration: none;
-      color: #333;
+      color: $text-color;
     }
 
     &[aria-selected='true'] {
