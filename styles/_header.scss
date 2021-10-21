@@ -21,7 +21,7 @@
   stroke: $text-color;
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
     background-color: transparent;
     color: $brand-color;
@@ -86,13 +86,6 @@
       margin: 0 0 0 20px;
     }
 
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: transparent;
-      color: $link_color;
-    }
-
     &.sign-in {
       display: inline-block;
       margin: 0;
@@ -125,43 +118,6 @@
   }
 }
 
-.header-mobile-actions {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-
-  @include tablet {
-    display: none;
-  }
-
-  .search-button,
-  .menu-button {
-    padding: 8px;
-    background: transparent;
-    border: none;
-    color: $text-color;
-    cursor: pointer;
-  }
-
-  .menu-button {
-    svg {
-      display: none;
-    }
-
-    &[aria-expanded='false'] {
-      .menu-icon {
-        display: inline-block;
-      }
-    }
-
-    &[aria-expanded='true'] {
-      .x-icon {
-        display: inline-block;
-      }
-    }
-  }
-}
-
 .header-mobile-menu {
   display: none;
   overflow-y: auto;
@@ -173,11 +129,17 @@
   padding-right: 5%;
   padding-left: 5%;
   padding-bottom: 30px;
-  padding-top: $header-height + 30px;
+  padding-top: $header-height;
   margin-top: -$header-height;
 
   &[aria-expanded='true'] {
     display: block;
+  }
+
+  &-search {
+    position: relative;
+    margin-bottom: 10px;
+    padding: 12px 0;
   }
 
   ul {
@@ -205,6 +167,34 @@
           color: $brand-color;
         }
       }
+    }
+  }
+}
+
+.header-mobile-menu-button {
+  padding: 8px;
+  background: transparent;
+  border: none;
+  color: $text-color;
+  cursor: pointer;
+
+  @include tablet {
+    display: none;
+  }
+
+  svg {
+    display: none;
+  }
+
+  &[aria-expanded='false'] {
+    .menu-icon {
+      display: inline-block;
+    }
+  }
+
+  &[aria-expanded='true'] {
+    .x-icon {
+      display: inline-block;
     }
   }
 }

@@ -45,40 +45,38 @@
       </div>
     </div>
     {{else}}
-    {{#link "sign_in" class="sign-in"}}
-    {{t 'sign_in'}}
-    {{/link}}
+      {{#link "sign_in"}}
+        {{t 'sign_in'}}
+      {{/link}}
     {{/if}}
   </div>
 
-  <div class="header-mobile-actions">
-    {{!-- TODO: make search available in the header instead of linking to the search page --}}
-    <a href="/hc/en-us/search" class="search-button" >
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" focusable="false" viewBox="0 0 12 12" aria-hidden="true">
-        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor" />
-        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5" />
-      </svg>
-    </a>
-  
-    <button aria-expanded="false" aria-controls="mobile-menu" aria-label="{{t 'toggle_navigation'}}" class="menu-button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" focusable="false" viewBox="0 0 16 16" aria-hidden="true" class="menu-icon">
-        <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13" />
-      </svg>
-  
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="x-icon">
-        <path stroke="currentColor" stroke-linecap="round" d="M3 9l6-6m0 6L3 3" />
-      </svg>
-    </button>
+  <button aria-expanded="false" aria-controls="mobile-menu" aria-label="{{t 'toggle_navigation'}}" class="header-mobile-menu-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" focusable="false" viewBox="0 0 16 16" aria-hidden="true" class="menu-icon">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13" />
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="x-icon">
+      <path stroke="currentColor" stroke-linecap="round" d="M3 9l6-6m0 6L3 3" />
+    </svg>
+  </button>
+</header>
+
+<nav class="header-mobile-menu" aria-expanded="false" id="mobile-menu">
+  <div class="header-mobile-menu-search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
+      class="search-icon" aria-hidden="true">
+      <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor" />
+      <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5" />
+    </svg>
+    {{search submit=false instant=settings.instant_search placeholder="Search knowledge base..."}}
   </div>
 
-
-</header>
-<nav class="header-mobile-menu" aria-expanded="false" id="mobile-menu">
   <ul>
-    <li>{{link 'new_request'}}</li>
     {{#if help_center.community_enabled}}
     <li>{{link 'community'}}</li>
     {{/if}}
+    <li>{{link 'new_request'}}</li>
     {{#if signed_in}}
     <li>{{my_profile}}</li>
     <li>{{link "my_activities"}}</li>

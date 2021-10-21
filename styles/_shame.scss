@@ -34,18 +34,6 @@
   outline: 0;
 }
 
-.code-copy-button::before {
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  padding-right: 4px;
-  content: '\f328';
-}
-
 /* for responsive article video embed */
 .embed-container {
   position: relative;
