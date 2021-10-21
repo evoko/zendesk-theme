@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
     toggle.focus();
   }
 
-  var mobileMenuButton = document.querySelector('.header .menu-button');
+  var mobileMenuButton = document.querySelector('.header-mobile-menu-button');
   var mobileMenu = document.querySelector('#mobile-menu');
   var body = document.querySelector('body');
 
@@ -197,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.keyCode === ESCAPE) {
       e.stopPropagation();
       closeNavigation(mobileMenuButton, this);
+      body.classList.remove('no-scroll');
     }
   });
 

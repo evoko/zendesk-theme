@@ -1,7 +1,6 @@
 /***** Search results *****/
 .search-results {
   @include desktop {
-    margin: 0 auto;
     max-width: $column-width;
   }
 
@@ -32,6 +31,12 @@
     > li {
       border-bottom: 1px solid $border-color;
       padding: 24px 0;
+    }
+  }
+
+  &-pagination-container {
+    @include desktop {
+      max-width: $column-width;
     }
   }
 }
