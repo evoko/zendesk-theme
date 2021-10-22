@@ -16,6 +16,6 @@
     "concurrently": "^6.3.0",
     "postcss-cli": "^9.0.1",
     "prettier": "^2.4.1",
-    "sass": "^1.43.2"
+    "sass": "^1.43.3"
   }
 }
