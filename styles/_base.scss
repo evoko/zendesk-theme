@@ -5,7 +5,7 @@
   font-style: normal;
   font-display: swap;
   src: url($assets-roobert-light-woff2) format('woff2'),
-    url($assets-roobert-light-woff2) format('woff');
+    url($assets-roobert-light-woff) format('woff');
 }
 
 @font-face {
@@ -14,7 +14,7 @@
   font-style: italic;
   font-display: swap;
   src: url($assets-roobert-light-italic-woff2) format('woff2'),
-    url($assets-roobert-light-italic-woff2) format('woff');
+    url($assets-roobert-light-italic-woff) format('woff');
 }
 
 @font-face {
@@ -23,7 +23,7 @@
   font-style: normal;
   font-display: swap;
   src: url($assets-roobert-semibold-woff2) format('woff2'),
-    url($assets-roobert-semibold-woff2) format('woff');
+    url($assets-roobert-semibold-woff) format('woff');
 }
 
 @font-face {
